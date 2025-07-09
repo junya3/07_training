@@ -1,0 +1,37 @@
+doctype html
+html(lang="ja")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+
+    //- ----------------------------
+    //- title
+    //- ----------------------------
+
+    block title 
+      - const title = "pug starter"
+      if pageTitle
+        title #{pageTitle} | #{title}
+      else 
+        title #{title}
+    
+    //- ----------------------------
+    //- style
+    //- ----------------------------
+
+    block style
+      link(rel="stylesheet", href="/assets/style/main.css")
+
+    //- ----------------------------
+    //- scirpt
+    //- ----------------------------
+
+    block script
+      script(type="module" src="assets/js/main.js")
+
+  //- ----------------------------
+  //- main content
+  //- ----------------------------
+  body 
+    .container.graph
+      block content
