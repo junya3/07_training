@@ -1,125 +1,21 @@
-:where(
-    html,
-    body,
-    div,
-    span,
-    applet,
-    object,
-    iframe,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    p,
-    blockquote,
-    pre,
-    a,
-    abbr,
-    acronym,
-    address,
-    big,
-    cite,
-    code,
-    del,
-    dfn,
-    em,
-    img,
-    ins,
-    kbd,
-    q,
-    s,
-    samp,
-    small,
-    strike,
-    strong,
-    sub,
-    sup,
-    tt,
-    var,
-    b,
-    u,
-    i,
-    center,
-    dl,
-    dt,
-    dd,
-    ol,
-    ul,
-    li,
-    fieldset,
-    form,
-    label,
-    legend,
-    table,
-    caption,
-    tbody,
-    tfoot,
-    thead,
-    tr,
-    th,
-    td,
-    article,
-    aside,
-    canvas,
-    details,
-    embed,
-    figure,
-    figcaption,
-    footer,
-    header,
-    hgroup,
-    menu,
-    nav,
-    output,
-    ruby,
-    section,
-    summary,
-    time,
-    mark,
-    audio,
-    video
-  ) {
+:where(*, *::before, *::after) {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
   font: inherit;
+  font-size: 100%;
   vertical-align: baseline;
-}
-
-/* HTML5 display-role reset for older browsers */
-:where(
-    article,
-    aside,
-    details,
-    figcaption,
-    figure,
-    footer,
-    header,
-    hgroup,
-    menu,
-    nav,
-    section
-  ) {
-  display: block;
-}
-
-:where(ol, ul) {
-  list-style: '';
-}
-
-:where(blockquote, q) {
+  list-style: none;
   quotes: none;
+  box-sizing: border-box;
 }
 
-:where(blockquote:before, blockquote:after, q:before, q:after) {
-  content: '';
-  content: none;
+:where(html, body) {
+  height: 100%;
+  line-height: 1.5;
 }
 
-:where(table) {
-  border-collapse: collapse;
-  border-spacing: 0;
+:where(img, picture, video, canvas, svg) {
+  display: block;
+  max-width: 100%;
 }

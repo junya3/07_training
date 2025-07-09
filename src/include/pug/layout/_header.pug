@@ -1,0 +1,35 @@
+mixin header 
+  -
+    const nav = [
+      {
+        title: "ホーム",
+        href:"/",
+      },
+      {
+        title: "プロダクト",
+        href:"/product",
+      },
+      {
+        title: "会社概要",
+        href:"/campany",
+      },
+      {
+        title: "問い合わせ",
+        href:"/contact",
+      },
+    ]
+
+  header#header.header 
+    .header__inner
+      h1.header__logo
+      nav.header__nav 
+        ul.header__nav-list 
+          each list in nav 
+            li.header__nav-item 
+              a.header__nav-link(href=list.href) #{list.title}
+
+        ul.header__menu
+          li.header__menu-item 
+            a.header__menu-link(href="/") ログイン
+          li.header__menu-item
+            a.header__menu-btn(href="/") 無料で始める
