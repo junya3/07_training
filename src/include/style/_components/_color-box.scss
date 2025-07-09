@@ -1,0 +1,10 @@
+@use 'style/_global/g-variable' as *;
+
+.color-box {
+  background: linear-gradient(
+    in oklch to right,
+    #{$box-color-2},
+    #{$box-color-1}
+  );
+  border-radius: 8px;
+}

@@ -1,3 +1,5 @@
+include /include/pug/component/_color-box
+
 mixin header 
   -
     const nav = [
@@ -22,6 +24,8 @@ mixin header
   header#header.header 
     .header__inner
       h1.header__logo
+        +color-box.header__logo-icon
+          | p
       nav.header__nav 
         ul.header__nav-list 
           each list in nav 

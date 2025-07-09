@@ -1,0 +1,14 @@
+@use 'style/_global/g-variable' as *;
+
+.header {
+  &__inner {
+    width: min(100%, #{$header-inner-width}px);
+    margin: 0 auto;
+    display: grid;
+  }
+}
+
+.header__logo-icon {
+  width: 64px;
+  aspect-ratio: 1/ 1;
+}
