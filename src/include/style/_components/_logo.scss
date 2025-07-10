@@ -1,0 +1,21 @@
+@use 'style/_global/g-variable' as *;
+@use 'style/_global/g-mixin' as *;
+
+.logo {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  &__icon {
+    @include font($font, 12, 700, 1.5);
+    color: #fff;
+    width: 32px;
+    aspect-ratio: 1/ 1;
+    text-align: center;
+    align-content: center;
+  }
+  &__title {
+    @include font($font, 14, 700, 1.5);
+    color: #111827;
+  }
+}

@@ -1,16 +1,12 @@
+@use 'style/_global/g-variable' as *;
+@use 'style/_global/g-mixin' as *;
+
 // ----------------------------
 // default
 // ----------------------------
 
 html {
-  font-size: 16px;
-}
-p {
-  font-size: 0.875rem;
-  line-height: 2;
-}
-section {
-  margin-bottom: 1rem;
+  @include font($font, $base-font-size, 400, 1.5);
 }
 
 // ----------------------------
@@ -22,20 +18,4 @@ section {
   padding: 2rem 2rem;
   margin-inline: auto;
   margin-block: 2rem;
-}
-
-// ----------------------------
-// title
-// ----------------------------
-
-.page-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-
-.sec-title {
-  font-size: 1.125rem;
-  font-weight: 600;
-  margin-bottom: 0.875rem;
 }

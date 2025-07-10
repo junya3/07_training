@@ -1,5 +1,36 @@
-@mixin sample-box() {
-  width: fit-content;
-  height: fit-content;
-  padding: 0.5rem 1rem;
+@use 'g-function' as *;
+
+// ----------------------------
+// font
+// ----------------------------
+
+@mixin font($font, $size, $weight, $line-height) {
+  font-family: $font;
+  font-size: rem($size);
+  font-weight: $weight;
+  line-height: $line-height;
+  font-style: normal;
+}
+
+// ----------------------------
+// media
+// ----------------------------
+
+@mixin hover() {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin md() {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+@mixin lg() {
+  @media screen and (min-width: 960px) {
+    @content;
+  }
 }

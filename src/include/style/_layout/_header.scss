@@ -1,4 +1,5 @@
 @use 'style/_global/g-variable' as *;
+@use 'style/_global/g-mixin' as *;
 
 .header {
   &__inner {
@@ -6,9 +7,4 @@
     margin: 0 auto;
     display: grid;
   }
-}
-
-.header__logo-icon {
-  width: 64px;
-  aspect-ratio: 1/ 1;
 }

@@ -3,5 +3,33 @@
 // ----------------------------
 
 $header-inner-width: 1200;
-$box-color-1: #9333ea;
-$box-color-2: #3b82f6;
+
+// ----------------------------
+// font
+// ----------------------------
+
+$font: 'M PLUS 1', sans-serif;
+$base-font-size: 16;
+
+// ----------------------------
+// color
+// ----------------------------
+:root {
+  --primary-color-100: #2563eb;
+  --primary-color-200: #9333ea;
+
+  --gradient: linear-gradient(
+    in oklch 90deg,
+    var(--primary-color-100) 0%,
+    var(--primary-color-200) 100%
+  );
+
+  --box-text-color: hsl(from var(--primary-color-100) h s calc(l - 20));
+  --box-bg-color: hsl(from var(--primary-color-100) h s calc(l + 20));
+
+  --color-green: #16a34a;
+  --color-yellow: #facc15;
+
+  --color-black: #111827;
+  --color-white: #ffffff;
+}
