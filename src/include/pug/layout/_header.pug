@@ -1,35 +1,39 @@
 include /include/pug/component/_logo
+include /include/pug/component/_menu-btn
+include /include/pug/component/_button
 
-mixin header 
+mixin header
   -
     const navList = {
-      ホーム: { ホーム: '/' },
-      プロダクト: {
-        機能: '/product',
-        料金: '/product/price',
-        API: '/product/api',
-        セキュリティ: '/product/security',
+      'ホーム': { 'ホーム': '/' },
+      'プロダクト': {
+        '機能': '/product',
+        '料金': '/product/price',
+        'API': '/product/api',
+        'セキュリティ': '/product/security'
       },
-      プロダクト: {
-        会社概要: '/campany',
-        求人情報: '/carrer',
-        ブログ: '/blog',
+      '会社情報': {
+        '会社概要': '/company',
+        '求人情報': '/career',
+        'ブログ': '/blog'
       },
-      サポート: {
-        ヘルプセンター: '/support',
-        お問い合わせ: '/contact',
-        コミュニティ: '/community',
-        ドキュメント: '/document',
-      },
-    }
+      'サポート': {
+        'ヘルプセンター': '/support',
+        'お問い合わせ': '/contact',
+        'コミュニティ': '/community',
+        'ドキュメント': '/document'
+      }
+    };
 
-  
+
 
 
   header#header.header 
     .header__inner
-      h1.header__logo
-        +logo
+      .header__header-top
+        h1.header__logo
+          +logo
+        +menu-btn
       nav.header__nav 
         ul.header__nav-list
           each subNav, category in navList
@@ -43,7 +47,7 @@ mixin header
 
 
         ul.header__menu
-          li.header__menu-item 
+          li.header__menu-item.login 
             a.header__menu-link(href="/") ログイン
           li.header__menu-item
-            a.header__menu-btn(href="/") 無料で始める
+            +button('無料で始める', '/', 'solid').header__menu-item-button

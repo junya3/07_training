@@ -2,9 +2,66 @@
 @use 'style/_global/g-mixin' as *;
 
 .header {
+  border-bottom: 1px solid var(--color-black-80);
   &__inner {
     width: min(100%, #{$header-inner-width}px);
     margin: 0 auto;
+  }
+  &__header-top {
     display: grid;
+    grid-template-columns: repeat(2, max-content);
+    justify-content: space-between;
+    padding: 16px 24px;
+    border-bottom: 1px solid #0000;
+
+    transition: border-color $transition;
+  }
+  &.active &__header-top {
+    border-color: var(--color-black-80);
+  }
+  &__nav {
+    display: grid;
+    overflow-y: clip;
+    height: 0;
+    transition: height $transition;
+    &-list {
+      display: grid;
+      gap: 0.5rem;
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--color-black-80);
+    }
+    &-item {
+      display: grid;
+    }
+    &-link {
+      @include font($font, 16, 500, 1.5);
+      color: var(--text-black-100);
+      @include hover() {
+        color: var(--primary-color-100);
+      }
+    }
+  }
+  &.active &__nav {
+    height: auto;
+  }
+  &__submenu {
+    padding: 0.5rem;
+    &-link {
+      @include font($font, 14, 400, 1.5);
+      color: var(--text-black-100);
+      @include hover() {
+        color: var(--primary-color-100);
+      }
+    }
+  }
+
+  &__menu {
+    &-item {
+      display: grid;
+      padding: 16px 24px;
+      &.login {
+        display: none;
+      }
+    }
   }
 }

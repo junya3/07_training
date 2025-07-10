@@ -4,9 +4,15 @@
 // ----------------------------
 // default
 // ----------------------------
-
+:root {
+  interpolate-size: allow-keywords;
+}
 html {
   @include font($font, $base-font-size, 400, 1.5);
+}
+a {
+  text-decoration: none;
+  color: var(--color-black);
 }
 
 // ----------------------------

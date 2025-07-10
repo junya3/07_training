@@ -30,6 +30,15 @@ $base-font-size: 16;
   --color-green: #16a34a;
   --color-yellow: #facc15;
 
-  --color-black: #111827;
+  --color-black: #000000;
+  --color-black-60: hsl(from var(--color-black) h s calc(l + 40));
+  --color-black-80: hsl(from var(--color-black) h s calc(l + 80));
+  --color-black-85: hsl(from var(--color-black) h s calc(l + 85));
   --color-white: #ffffff;
+
+  --text-black-100: var(--color-black-60);
 }
+
+// animation
+
+$transition: 0.5s;

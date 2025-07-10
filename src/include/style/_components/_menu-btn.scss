@@ -1,0 +1,60 @@
+@use 'style/_global/g-variable' as *;
+@use 'style/_global/g-mixin' as *;
+
+$rotation: 25deg;
+
+.header__menu {
+  &-btn {
+    width: 32px;
+    height: 32px;
+    background-color: #0000;
+    border-radius: 8px;
+
+    transition: background-color 0.2s;
+
+    position: relative;
+    cursor: pointer;
+
+    @include md() {
+      width: 48px;
+      height: 48px;
+    }
+    @include hover() {
+      background: var(--color-black-85);
+    }
+    &.active .header__menu-line:first-of-type {
+      translate: 0 0;
+      rotate: $rotation;
+      scale: -1 1;
+    }
+    &.active .header__menu-line:nth-of-type(2) {
+      background: #0000;
+      scale: -1 1;
+    }
+    &.active .header__menu-line:last-of-type {
+      translate: 0 0;
+      rotate: -$rotation;
+      scale: -1 1;
+    }
+  }
+
+  &-line {
+    width: 24px;
+    height: 2px;
+    background: var(--color-black);
+
+    position: absolute;
+    margin: auto;
+    inset: 0;
+
+    transition: translate $transition, rotate $transition,
+      background-color $transition, scale $transition;
+
+    &:first-of-type {
+      translate: 0 -6px;
+    }
+    &:last-of-type {
+      translate: 0 6px;
+    }
+  }
+}
