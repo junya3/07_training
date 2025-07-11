@@ -6,6 +6,10 @@
   &__inner {
     width: min(100%, #{$header-inner-width}px);
     margin: 0 auto;
+    @include lg() {
+      display: flex;
+      align-items: center;
+    }
   }
   &__header-top {
     display: grid;
@@ -15,23 +19,43 @@
     border-bottom: 1px solid #0000;
 
     transition: border-color $transition;
+
+    @include lg() {
+      display: block;
+    }
   }
   &.active &__header-top {
     border-color: var(--color-black-80);
   }
+
   &__nav {
     display: grid;
     overflow-y: clip;
     height: 0;
     transition: height $transition;
+    @include lg() {
+      display: flex;
+      flex: 1;
+      height: auto;
+    }
     &-list {
       display: grid;
+      flex: 1;
       gap: 0.5rem;
       padding: 16px 24px;
       border-bottom: 1px solid var(--color-black-80);
+      @include lg() {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        border: none;
+      }
     }
     &-item {
       display: grid;
+      @include lg() {
+        align-content: center;
+      }
     }
     &-link {
       @include font($font, 16, 500, 1.5);
@@ -46,6 +70,11 @@
   }
   &__submenu {
     padding: 0.5rem;
+
+    @include lg() {
+      position: absolute;
+      display: none;
+    }
     &-link {
       @include font($font, 14, 400, 1.5);
       color: var(--text-black-100);
@@ -56,12 +85,28 @@
   }
 
   &__menu {
+    @include lg() {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
     &-item {
       display: grid;
       padding: 16px 24px;
+      @include lg() {
+        padding: 0;
+      }
       &.login {
         display: none;
+        @include lg() {
+          display: block;
+        }
       }
+    }
+  }
+  .header__menu-btn {
+    @include lg() {
+      display: none;
     }
   }
 }

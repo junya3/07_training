@@ -9,6 +9,9 @@
   @include md() {
     gap: 14px;
   }
+  @include lg() {
+    gap: 8px;
+  }
   &__icon {
     @include font($font, 12, 700, 1.5);
     color: #fff;
@@ -21,12 +24,19 @@
       width: 48px;
       @include font($font, 18, 700, 1.5);
     }
+    @include lg() {
+      width: 32px;
+      @include font($font, 12, 700, 1.5);
+    }
   }
   &__title {
     @include font($font, 14, 700, 1.5);
     color: #111827;
     @include md() {
       @include font($font, 24, 700, 1.5);
+    }
+    @include lg() {
+      @include font($font, 20, 700, 1.5);
     }
   }
 }
