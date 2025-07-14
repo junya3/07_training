@@ -1,0 +1,28 @@
+@use 'style/_global/g-mixin' as *;
+@use 'style/_global/g-variable' as *;
+
+.page-top-sec {
+  padding: 80px 16px;
+  background: var(--sec-gradient);
+
+  &__inner {
+    width: min(100%, #{$i_content-width}px);
+    padding-block: 32px;
+    margin-inline: auto;
+
+    text-align: center;
+  }
+  &__inner {
+    display: grid;
+    gap: 24px;
+  }
+  &__title {
+    @include font($font, 36, 600, 1.5);
+    @include md() {
+      @include font($font, 60, 600, 1.5);
+    }
+  }
+  &__text {
+    @include font($font, 20, 400, 1.5);
+  }
+}

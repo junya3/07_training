@@ -1,0 +1,9 @@
+extends /component/pug/layout/_layout
+
+include /component/pug/pages/top/_mv
+
+block prepend title 
+  - const pageTitle = "top"
+
+block content 
+  +mv

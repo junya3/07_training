@@ -1,0 +1,55 @@
+@use 'style/_global/g-variable' as *;
+@use 'style/_global/g-mixin' as *;
+
+// ----------------------------
+// default
+// ----------------------------
+:root {
+  interpolate-size: allow-keywords;
+}
+html {
+  @include font($font, $base-font-size, 400, 1.5);
+  letter-spacing: 0.04em;
+}
+body {
+  color: var(--text-black-100);
+}
+a {
+  text-decoration: none;
+  color: var(--color-black);
+}
+img {
+  object-fit: cover;
+}
+/* リサイズ中はtransitionを無効化 */
+body.is-resizing * {
+  transition: none !important;
+}
+
+// ----------------------------
+// layout
+// ----------------------------
+
+.container {
+  width: min(100%, #{$inner-width}px);
+  padding-inline: $inner-padding + px;
+  margin-inline: auto;
+  margin-top: 65px;
+  @include md() {
+    margin-top: 81px;
+  }
+  @include lg() {
+    margin-top: 66px;
+  }
+}
+
+// ----------------------------
+// common
+// ----------------------------
+
+.text-gradient {
+  color: #0000;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+}

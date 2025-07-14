@@ -47,6 +47,8 @@ $rotation: 25deg;
     margin: auto;
     inset: 0;
 
+    border-radius: 2px;
+
     transition: translate $transition, rotate $transition,
       background-color $transition, scale $transition;
 

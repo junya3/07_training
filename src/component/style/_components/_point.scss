@@ -1,0 +1,26 @@
+@use 'style/_global/g-variable' as *;
+@use 'style/_global/g-mixin' as *;
+
+.point {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-inline: auto;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--color-blue-40);
+  color: var(--color-dark-blue-10);
+  @include font($font, 14, 400, 1);
+
+  &::before {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: 9px;
+    background: var(--color-blue);
+  }
+}

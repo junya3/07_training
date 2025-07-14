@@ -1,0 +1,113 @@
+@use 'style/_global/g-mixin' as *;
+@use 'style/_global/g-variable' as *;
+
+.mv {
+  &__buttons {
+    display: grid;
+    gap: 16px;
+    margin-bottom: 20px;
+    @include md() {
+      width: 500px;
+      margin-inline: auto;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  .button {
+    display: block;
+    width: 240px;
+    padding: 20px 30px;
+    margin-inline: auto;
+    @include font($font, 16, 500, 1);
+  }
+  &__small-text {
+    text-align: center;
+    margin-bottom: 36px;
+    @include font($font, 14, 400, 1.5);
+  }
+  &__ky {
+    height: 400px;
+    padding: 16px;
+    border: 1px solid var(--color-black-85);
+    border-radius: 16px;
+    background: var(--color-white);
+    box-shadow: 0 4px 20px 0 var(--color-black-85);
+    position: relative;
+
+    &-img {
+      width: 100%;
+      height: 100%;
+      background: #ccc;
+      border-radius: 8px;
+    }
+    &-text {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: fit-content;
+      padding: 24px;
+      margin: 16px;
+      color: var(--color-white);
+      &-main {
+        @include font($font, 24, 700, 1.5);
+      }
+      &-sub {
+        @include font($font, 16, 400, 1.5);
+      }
+    }
+
+    &-circle {
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      position: absolute;
+
+      &--blue {
+        width: 100px;
+        background: var(--circle-blue);
+        top: 0;
+        left: 0;
+        translate: -25% -25%;
+        animation: circle-opacity 4s infinite;
+      }
+      &--yellow {
+        width: 60px;
+        background: var(--circle-yellow);
+        top: 50%;
+        right: 0;
+        translate: 50% 50%;
+        animation: circle-translate 4s infinite;
+      }
+      &--purple {
+        width: 80px;
+        background: var(--circle-purple);
+        bottom: 0;
+        right: 0;
+        translate: 50% 50%;
+        animation: circle-opacity 4s 1s infinite;
+      }
+
+      @keyframes circle-opacity {
+        from {
+          opacity: 0.5;
+        }
+        50% {
+          opacity: 1;
+        }
+        to {
+          opacity: 0.5;
+        }
+      }
+      @keyframes circle-translate {
+        from {
+          translate: 50% 50%;
+        }
+        50% {
+          translate: 50% 0;
+        }
+        to {
+          translate: 50% 50%;
+        }
+      }
+    }
+  }
+}
