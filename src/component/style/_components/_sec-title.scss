@@ -1,0 +1,15 @@
+@use 'style/_global/g-variable' as *;
+@use 'style/_global/g-mixin' as *;
+
+.heading {
+  display: grid;
+  gap: 16px;
+  text-align: center;
+
+  &__title {
+    @include font($font, 36, 700, 1.25);
+  }
+  &__desc {
+    @include font($font, 18, 400, 1.5);
+  }
+}
