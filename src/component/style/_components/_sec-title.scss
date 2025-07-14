@@ -6,6 +6,8 @@
   gap: 16px;
   text-align: center;
 
+  margin-bottom: 60px;
+
   &__title {
     @include font($font, 36, 700, 1.25);
   }

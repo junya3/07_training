@@ -1,0 +1,10 @@
+@use 'style/_global/g-variable' as *;
+@use 'style/_global/g-mixin' as *;
+
+.link {
+  display: block;
+  width: fit-content;
+  margin-inline: auto;
+  color: var(--color-blue);
+  @include font($font, 14, 400, 1.5);
+}

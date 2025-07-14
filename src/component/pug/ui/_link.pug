@@ -1,0 +1,4 @@
+mixin link(text, url, target)
+  -
+    const isExternal = target === '_blank'
+  a.link(href=url, target=target, rel=isExternal ? 'noopener noreferrer' : false)= text

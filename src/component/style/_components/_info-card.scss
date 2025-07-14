@@ -1,0 +1,33 @@
+@use 'style/_global/g-mixin' as *;
+@use 'style/_global/g-variable' as *;
+
+.col {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 50px;
+  &-3 {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+.info-card {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 2;
+  gap: 16px;
+
+  padding: 16px;
+  border-radius: 8px;
+  background: var(--color-gray);
+
+  &__title {
+    @include font($font, 20, 600, 1.5);
+  }
+  &__description {
+    @include font($font, 16, 400, 1.5);
+  }
+
+  &:has(.info-card__icon) {
+    grid-row: span 3;
+  }
+}

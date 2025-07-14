@@ -1,0 +1,6 @@
+mixin info-card(icon, title, description)
+  li.info-card 
+    if icon 
+      .info-card__icon: i(class=icon)
+    h3.info-card__title= title 
+    p.info-card__description= description

@@ -1,5 +1,33 @@
 include /component/pug/ui/_sec-title
+include /component/pug/ui/_info-card
+include /component/pug/ui/_link
 
 mixin feature-overview
+  -
+    const features = [
+      {
+        icon: '',
+        title: 'タイトル',
+        description: 'ディスクリプション'
+      },
+      {
+        icon: '',
+        title: 'タイトル',
+        description: 'ディスクリプション'
+      },
+      {
+        icon: '',
+        title: 'タイトルタイトルタイトルタイトル',
+        description: 'ディスクリプションディスクリプションディスクリプションディスクリプションディスクリプションディスクリプションディスクリプション'
+      },
+    ]
+
   section.feature-overview 
-    +sec-title('成功に必要なすべてが揃っています','ワークフローを効率化し、チームの生産性を向上させる強力な機能')
+    .container 
+      +sec-title('成功に必要なすべてが揃っています','ワークフローを効率化し、チームの生産性を向上させる強力な機能')
+
+      ul.feature-overview__feature-cards.col.col-3 
+        each feature in features 
+          +info-card(feature.icon, feature.title, feature.description)
+
+      +link('すべての機能を見る →', '/')
