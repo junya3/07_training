@@ -1,9 +1,11 @@
 extends /component/pug/layout/_layout
 
 include /component/pug/pages/top/_mv
+include /component/pug/pages/top/_feature-overview
 
 block prepend title 
   - const pageTitle = "top"
 
 block content 
   +mv
+  +feature-overview
