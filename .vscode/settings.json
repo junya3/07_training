@@ -1,9 +1,9 @@
 {
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "files.associations": {
-    "*.pug": "pug"
-  },
+  // "files.associations": {
+  //   "*.pug": "pug"
+  // },
   "prettier.requireConfig": true,
   "[pug]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
