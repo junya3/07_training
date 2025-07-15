@@ -28,13 +28,13 @@ mixin header
 
 
 
-  header#header.header 
+  header#header.header
     .header__inner
       .header__header-top
         h1.header__logo
           +logo
         +menu-btn
-      nav.header__nav 
+      nav.header__nav
         ul.header__nav-list
           each subNav, category in navList
             li.header__nav-item.header__nav-item--has-children
@@ -43,11 +43,10 @@ mixin header
                 ul.header__submenu
                   each linkHref, linkText in subNav
                     li.header__submenu-item
-                      a.header__submenu-link(href=linkHref) #{linkText}
-
+                      a.header__submenu-link(href=linkHref) #{ linkText }
 
         .header__menu
-          li.header__menu-item.login 
+          li.header__menu-item.login
             a.header__menu-link(href="/") ログイン
           li.header__menu-item
-            +button('無料で始める', '/', 'solid').header__menu-item-button
+            +button("無料で始める", "/", "solid").header__menu-item-button

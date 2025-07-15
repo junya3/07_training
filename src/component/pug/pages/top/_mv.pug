@@ -1,7 +1,7 @@
 include /component/pug/ui/_point
 include /component/pug/ui/_button
 
-mixin mv()
+mixin mv
   section#mv.mv.page-top-sec
     .container.page-top-sec__container
       +point("新機能：AI搭載のコラボレーション機能")
@@ -10,15 +10,15 @@ mixin mv()
         p.mv__text.page-top-sec__text FlowSyncでチームの生産性を変革しましょう。全員が連携し、集中し、共に前進するための オールインワンコラボレーションプラットフォーム。
 
       .mv__buttons
-        +button('無料トライアル開始', "/")
-        +button('デモを見る', "/", 'outline')
+        +button("無料トライアル開始", "/")
+        +button("デモを見る", "/", "outline")
 
       p.mv__small-text 世界中の50,000以上のチームに信頼されています
 
       .mv__ky
-        img.mv__ky-img(src="/assets/image/mv.jpg", alt="")
-        .mv__ky-circle.mv__ky-circle--blue 
-        .mv__ky-circle.mv__ky-circle--yellow 
+        img.mv__ky-img(src="/assets/image/mv.jpg" alt="")
+        .mv__ky-circle.mv__ky-circle--blue
+        .mv__ky-circle.mv__ky-circle--yellow
         .mv__ky-circle.mv__ky-circle--purple
         .mv__ky-text
           p.mv__ky-text-main リアルタイムコラボレーション

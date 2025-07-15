@@ -22,12 +22,12 @@ mixin feature-overview
       },
     ]
 
-  section.feature-overview 
-    .container 
-      +sec-title('成功に必要なすべてが揃っています','ワークフローを効率化し、チームの生産性を向上させる強力な機能')
+  section.feature-overview
+    .container
+      +sec-title("成功に必要なすべてが揃っています", "ワークフローを効率化し、チームの生産性を向上させる強力な機能")
 
-      ul.feature-overview__feature-cards.col.col-3 
-        each feature in features 
+      ul.feature-overview__feature-cards.col.col-3
+        each feature in features
           +info-card(feature.icon, feature.title, feature.description)
 
-      +link('すべての機能を見る →', '/')
+      +link("すべての機能を見る →", "/")
