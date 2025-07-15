@@ -1,0 +1,12 @@
+mixin review-card(name, job, rating, review)
+  .review-card
+    .review-card__header
+      h3.review-card__name= name
+      span.review-card__job= job
+    .review-card__rating
+      - for (var i = 1; i <= 5; i++)
+        if i <= rating
+          span.rating__star.rating__star--active ★
+        else
+          span.rating__star.rating__star--empty ☆
+    p.review-card__text= review

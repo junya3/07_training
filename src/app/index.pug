@@ -2,6 +2,7 @@ extends /component/pug/layout/_layout
 
 include /component/pug/pages/top/_mv
 include /component/pug/pages/top/_feature-overview
+include /component/pug/pages/top/_review-overview
 
 block prepend title
   - const pageTitle = "top";
@@ -9,3 +10,4 @@ block prepend title
 block content
   +mv
   +feature-overview
+  +review-overview

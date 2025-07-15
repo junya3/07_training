@@ -1,0 +1,25 @@
+include /component/pug/ui/_sec-title
+include /component/pug/ui/_review-card
+
+mixin review-overview
+  -
+    const reviews = [
+      {
+        name: '田中 太郎',
+        job: 'プロジェクトマネージャー',
+        rating: '5',
+        review: 'FlowSyncのおかげで、チームの生産性が30%向上しました。直感的なインターフェースが素晴らしいです。'
+      },
+      {
+        name: '佐藤 花子',
+        job: 'リードエンジニア',
+        rating: '4',
+        review: '多くのコラボレーションツールを試しましたが、FlowSyncが最も使いやすく、機能も充実しています。'
+      },
+    ]
+
+  section.review-overview
+    .container
+      +sec-title("世界中のチームに愛用されています")
+      each review in reviews
+        +review-card(review.name, review.job, review.rating, review.review)
