@@ -2,6 +2,7 @@
 @use "style/_global/g-variable" as *;
 
 .button {
+  display: block;
   padding: 0.5em 1em;
   text-align: center;
   border-radius: 0.5rem;
@@ -27,6 +28,25 @@
     @include hover() {
       background-color: var(--primary-color-100);
       color: var(--color-blue-40);
+    }
+  }
+
+  &--white-solid {
+    color: var(--primary-color-100);
+    background-color: var(--color-white);
+    border-color: var(--color-white);
+    @include hover() {
+      background-color: #0000;
+      color: var(--color-white);
+    }
+  }
+  &--white-outline {
+    background-color: #0000;
+    color: var(--color-white);
+    border-color: var(--color-white);
+    @include hover() {
+      background-color: var(--color-white);
+      color: var(--primary-color-100);
     }
   }
 }

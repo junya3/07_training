@@ -1,0 +1,27 @@
+@use "style/_global/g-mixin" as *;
+@use "style/_global/g-variable" as *;
+
+.banner {
+  background: var(--gradient);
+
+  .heading {
+    color: var(--color-white);
+
+    &__desc {
+      color: var(--color-banner-desc);
+    }
+  }
+
+  &__buttons {
+    width: min(100%, 600px);
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+
+    .button {
+      padding: 16px;
+      @include font($font, 18, 700, 1.5);
+    }
+  }
+}

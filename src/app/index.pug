@@ -3,6 +3,7 @@ extends /component/pug/layout/_layout
 include /component/pug/pages/top/_mv
 include /component/pug/pages/top/_feature-overview
 include /component/pug/pages/top/_review-overview
+include /component/pug/ui/_banner
 
 block prepend title
   - const pageTitle = "top";
@@ -11,3 +12,4 @@ block content
   +mv
   +feature-overview
   +review-overview
+  +banner("今すぐチームの生産性を向上させましょう", "14日間の無料トライアルで、FlowSyncの威力を体験してください", { label: "無料で始める", href: "/", style: "white-solid" }, { label: "料金を見る", href: "/price", style: "white-outline" })
