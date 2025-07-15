@@ -21,5 +21,6 @@ mixin review-overview
   section.review-overview
     .container
       +sec-title("世界中のチームに愛用されています")
-      each review in reviews
-        +review-card(review.name, review.job, review.rating, review.review)
+      ul.review-overview__review-cards.col.col-2
+        each review in reviews
+          +review-card(review.name, review.job, review.rating, review.review)

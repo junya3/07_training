@@ -1,0 +1,9 @@
+.review-card {
+  grid-row: span 3;
+
+  background: var(--color-white);
+  box-shadow: var(--box-shadow);
+  .rating__star {
+    color: var(--color-yellow);
+  }
+}

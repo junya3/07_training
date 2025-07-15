@@ -16,6 +16,10 @@ body {
 }
 section {
   padding: 80px 16px;
+
+  &:nth-child(2n + 3) {
+    background: var(--color-gray);
+  }
 }
 a {
   text-decoration: none;
@@ -55,4 +59,35 @@ body.is-resizing * {
   background: var(--gradient);
   -webkit-background-clip: text;
   background-clip: text;
+}
+
+// ----------------------------
+// card-grid
+// ----------------------------
+
+.col {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 50px;
+
+  grid-template-columns: 1fr;
+
+  @include md() {
+    &-2 {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    &-3 {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+  }
+}
+
+.card {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 2;
+
+  gap: 16px;
+  padding: 32px;
+  border-radius: 8px;
 }
