@@ -9,10 +9,12 @@
 }
 html {
   @include font($font, $base-font-size, 400, 1.5);
+  overflow-x: hidden;
   letter-spacing: 0.04em;
 }
 body {
   color: var(--text-black-100);
+  overflow-x: hidden;
 }
 section {
   padding: 80px 16px;
