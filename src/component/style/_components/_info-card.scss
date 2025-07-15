@@ -16,9 +16,23 @@
   grid-row: span 2;
   gap: 16px;
 
-  padding: 16px;
+  padding: 32px;
   border-radius: 8px;
   background: var(--color-gray);
+
+  &__icon {
+    font-size: 1.5rem;
+
+    .blue {
+      color: var(--color-blue);
+    }
+    .green {
+      color: var(--color-green);
+    }
+    .purple {
+      color: var(--color-purple);
+    }
+  }
 
   &__title {
     @include font($font, 20, 600, 1.5);

@@ -6,19 +6,22 @@ mixin feature-overview
   -
     const features = [
       {
-        icon: '',
-        title: 'タイトル',
-        description: 'ディスクリプション'
+        icon: 'bolt',
+        color: 'blue',
+        title: '高速同期',
+        description: 'リアルタイムでの同期により、チーム全体が常に最新の情報を共有'
       },
       {
-        icon: '',
-        title: 'タイトル',
-        description: 'ディスクリプション'
+        icon: 'users',
+        color: 'green',
+        title: 'チーム連携',
+        description: 'シームレスなコミュニケーションとプロジェクト管理機能'
       },
       {
-        icon: '',
-        title: 'タイトルタイトルタイトルタイトル',
-        description: 'ディスクリプションディスクリプションディスクリプションディスクリプションディスクリプションディスクリプションディスクリプション'
+        icon: 'shield-halved',
+        color: 'purple',
+        title: '企業レベルセキュリティ',
+        description: 'エンドツーエンド暗号化による安全なデータ保護'
       },
     ]
 
@@ -28,6 +31,6 @@ mixin feature-overview
 
       ul.feature-overview__feature-cards.col.col-3
         each feature in features
-          +info-card(feature.icon, feature.title, feature.description)
+          +info-card(feature.title, feature.description, feature.icon, feature.color)
 
       +link("すべての機能を見る →", "/")
