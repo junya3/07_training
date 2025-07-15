@@ -4,14 +4,14 @@ doctype html
 html(lang="ja")
   head
     meta(charset="UTF-8")
-    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
 
     //- ----------------------------
     //- title
     //- ----------------------------
 
     block title
-      - const title = "FlowSync"
+      - const title = "FlowSync";
       if pageTitle
         title #{ pageTitle } | #{ title }
       else
@@ -22,17 +22,17 @@ html(lang="ja")
     //- ----------------------------
 
     block style
-      link(rel="stylesheet" href="/assets/style/main.css")
+      link(rel="stylesheet", href="/assets/style/main.css")
 
     //- ----------------------------
     //- style
     //- ----------------------------
 
     block font
-      link(rel="preconnect" href="https://fonts.googleapis.com")
-      link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+      link(rel="preconnect", href="https://fonts.googleapis.com")
+      link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
       link(
-        rel="stylesheet"
+        rel="stylesheet",
         href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@100..900&display=swap"
       )
 
@@ -41,8 +41,10 @@ html(lang="ja")
     //- ----------------------------
 
     block script
-      script(type="module" src="assets/js/main.js")
-      script(src="https://kit.fontawesome.com/739443d1a5.js" crossorigin="anonymous")
+      script(type="module", src="assets/js/main.js")
+      script(
+        src="https://kit.fontawesome.com/739443d1a5.js" crossorigin="anonymous"
+      )
   //- ----------------------------
   //- main content
   //- ----------------------------
