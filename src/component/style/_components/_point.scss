@@ -1,5 +1,5 @@
-@use 'style/_global/g-variable' as *;
-@use 'style/_global/g-mixin' as *;
+@use "style/_global/g-variable" as *;
+@use "style/_global/g-mixin" as *;
 
 .point {
   width: fit-content;
@@ -16,7 +16,7 @@
   @include font($font, 14, 400, 1);
 
   &::before {
-    content: '';
+    content: "";
     display: block;
     width: 8px;
     height: 8px;

@@ -1,4 +1,4 @@
-@use 'g-variable' as *;
+@use "g-variable" as *;
 
 @function rem($size) {
   @return calc(#{$size} / #{$base-font-size} * 1rem);

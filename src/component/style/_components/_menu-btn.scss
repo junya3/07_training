@@ -1,5 +1,5 @@
-@use 'style/_global/g-variable' as *;
-@use 'style/_global/g-mixin' as *;
+@use "style/_global/g-variable" as *;
+@use "style/_global/g-mixin" as *;
 
 $rotation: 25deg;
 
@@ -49,8 +49,11 @@ $rotation: 25deg;
 
     border-radius: 2px;
 
-    transition: translate $transition, rotate $transition,
-      background-color $transition, scale $transition;
+    transition:
+      translate $transition,
+      rotate $transition,
+      background-color $transition,
+      scale $transition;
 
     &:first-of-type {
       translate: 0 -6px;

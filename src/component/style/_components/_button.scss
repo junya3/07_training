@@ -1,5 +1,5 @@
-@use 'style/_global/g-mixin' as *;
-@use 'style/_global/g-variable' as *;
+@use "style/_global/g-mixin" as *;
+@use "style/_global/g-variable" as *;
 
 .button {
   padding: 0.5em 1em;
@@ -7,7 +7,9 @@
   border-radius: 0.5rem;
   border: 1px solid;
 
-  transition: background-color 0.2s, color 0.2s;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
 
   &--solid {
     background-color: var(--primary-color-100);
