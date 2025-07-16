@@ -1,5 +1,5 @@
 mixin info-card(title, description, icon, iconColor)
-  li.info-card.card
+  li.info-card.card&attributes(attributes)
     if icon
       .info-card__icon.icon: i(class=`fa-${icon} ${iconColor} fa-solid`)
     h3.info-card__title= title

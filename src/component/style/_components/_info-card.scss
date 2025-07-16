@@ -18,4 +18,7 @@
   &:has(.info-card__icon) {
     grid-row: span 3;
   }
+  &.white {
+    background: var(--color-white);
+  }
 }
