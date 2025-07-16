@@ -2,10 +2,20 @@ include /component/pug/ui/_logo
 include /component/pug/ui/_button
 include /component/pug/ui/_nav-list
 
+-
+  const description = 'チームの生産性を向上させる、次世代のコラボレーションプラットフォーム'
+
 mixin footer(navList)
   footer#footer.footer
     .footer__inner
       .footer__footer-top
-        h1.footer__logo
-          +logo
-      +nav-list("footer", navList)
+        hgroup.footer__logo.footer__heading
+          h2.footer__heading-titile
+            +logo.white
+          p.footer__heading-description= description
+
+        +nav-list("footer", navList)
+
+      .footer__footer-bottom
+        p.copy
+          small &copy; 2025 junya03.com sample-site

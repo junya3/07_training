@@ -1,7 +1,7 @@
 include /component/pug/ui/_color-box
 
 mixin logo
-  .logo
+  .logo&attributes(attributes)
     +color-box.logo__icon
       | F
     span.logo__title FlowSync

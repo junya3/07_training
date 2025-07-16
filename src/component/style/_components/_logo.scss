@@ -31,12 +31,18 @@
   }
   &__title {
     @include font($font, 14, 700, 1.5);
-    color: #111827;
+    color: var(--color-black-20);
     @include md() {
       @include font($font, 24, 700, 1.5);
     }
     @include lg() {
       @include font($font, 20, 700, 1.5);
+    }
+  }
+
+  &.white {
+    .logo__title {
+      color: var(--color-white);
     }
   }
 }

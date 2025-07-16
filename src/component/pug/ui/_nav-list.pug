@@ -2,14 +2,16 @@ mixin nav-list(content, navList)
   nav(class=`${content}__nav`)
     ul(class=`${content}__nav-list`)
       each subNav, category in navList
-        li(class=`${content}__nav-item ${content}__nav-item--has-children`)
-          //- 最初のリンクをカテゴリーのリンクとして使用
-          a(class=`${content}__nav-link`, href=Object.values(subNav)[0])= category
-          //- サブメニューが複数ある場合のみドロップダウン表示
-          if Object.keys(subNav).length > 1
-            ul(class=`${content}__submenu`)
-              each linkHref, linkText in subNav
-                li(class=`${content}__submenu-item`)
-                  a(class=`${content}__submenu-link`, href=linkHref)= linkText
+        //- contentが'footer'で、かつcategoryが'ホーム'の場合はこのliを生成しない
+        unless content === "footer" && category === "ホーム"
+          li(class=`${content}__nav-item ${content}__nav-item--has-children`)
+            //- 最初のリンクをカテゴリーのリンクとして使用
+            a(class=`${content}__nav-link`, href=Object.values(subNav)[0])= category
+            //- サブメニューが複数ある場合のみドロップダウン表示
+            if Object.keys(subNav).length > 1
+              ul(class=`${content}__submenu`)
+                each linkHref, linkText in subNav
+                  li(class=`${content}__submenu-item`)
+                    a(class=`${content}__submenu-link`, href=linkHref)= linkText
 
     block

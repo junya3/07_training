@@ -52,7 +52,7 @@ $base-font-size: 16;
   --text-black-100: var(--color-black-20);
   --text-black-80: var(--color-black-80);
 
-  --color-banner-desc: color-mix(in srgb, var(--color-white) 80%, #0000);
+  --color-white-semi-80: color-mix(in srgb, var(--color-white) 80%, #0000);
   --box-shadow: 0 4px 20px 0 var(--color-black-85);
 
   --circle-blue: color-mix(in srgb, var(--color-blue) 20%, #0000);
