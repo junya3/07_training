@@ -10,8 +10,15 @@ $i_content-width: 700;
 // ----------------------------
 // font
 // ----------------------------
-
-$font: "M PLUS 1", sans-serif;
+$font:
+  "Noto Sans JP",
+  "Hiragino Sans",
+  "Yu Gothic",
+  Meiryo,
+  -apple-system,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  sans-serif;
 $base-font-size: 16;
 
 // ----------------------------
