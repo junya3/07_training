@@ -1,5 +1,27 @@
 include /component/pug/layout/_header
 
+-
+  const navList = {
+    'ホーム': { 'ホーム': '/' },
+    'プロダクト': {
+      '機能': '/product',
+      '料金': '/product/price',
+      'API': '/product/api',
+      'セキュリティ': '/product/security'
+    },
+    '会社情報': {
+      '会社概要': '/company',
+      '求人情報': '/career',
+      'ブログ': '/blog'
+    },
+    'サポート': {
+      'ヘルプセンター': '/support',
+      'お問い合わせ': '/contact',
+      'コミュニティ': '/community',
+      'ドキュメント': '/document'
+    }
+  };
+
 doctype html
 html(lang="ja")
   head
@@ -50,6 +72,6 @@ html(lang="ja")
   //- main content
   //- ----------------------------
   body
-    +header
+    +header(navList)
     main
       block content

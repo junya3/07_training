@@ -2,32 +2,7 @@ include /component/pug/ui/_logo
 include /component/pug/ui/_menu-btn
 include /component/pug/ui/_button
 
-mixin header
-  -
-    const navList = {
-      'ホーム': { 'ホーム': '/' },
-      'プロダクト': {
-        '機能': '/product',
-        '料金': '/product/price',
-        'API': '/product/api',
-        'セキュリティ': '/product/security'
-      },
-      '会社情報': {
-        '会社概要': '/company',
-        '求人情報': '/career',
-        'ブログ': '/blog'
-      },
-      'サポート': {
-        'ヘルプセンター': '/support',
-        'お問い合わせ': '/contact',
-        'コミュニティ': '/community',
-        'ドキュメント': '/document'
-      }
-    };
-
-
-
-
+mixin header(navList)
   header#header.header
     .header__inner
       .header__header-top
@@ -38,14 +13,17 @@ mixin header
         ul.header__nav-list
           each subNav, category in navList
             li.header__nav-item.header__nav-item--has-children
+              //- 最初のリンクをカテゴリーのリンクとして使用
               a.header__nav-link(href=Object.values(subNav)[0])= category
+              //- サブメニューが複数ある場合のみドロップダウン表示
               if Object.keys(subNav).length > 1
                 ul.header__submenu
                   each linkHref, linkText in subNav
                     li.header__submenu-item
-                      a.header__submenu-link(href=linkHref) #{ linkText }
+                      a.header__submenu-link(href=linkHref)= linkText
 
-        .header__menu
+        //- メニューリストの構造を修正
+        ul.header__menu
           li.header__menu-item.login
             a.header__menu-link(href="/") ログイン
           li.header__menu-item
