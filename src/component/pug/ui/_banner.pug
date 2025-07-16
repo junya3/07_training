@@ -3,7 +3,8 @@ include /component/pug/ui/_button
 
 mixin banner(title, description, ...buttons)
   section.banner
-    +sec-title(title, description)
-    .banner__buttons
-      each btn in buttons
-        +button(btn.label, btn.href, btn.style)
+    .container
+      +sec-title(title, description)
+      .banner__buttons
+        each btn in buttons
+          +button(btn.label, btn.href, btn.style)

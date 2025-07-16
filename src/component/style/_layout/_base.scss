@@ -43,13 +43,6 @@ body.is-resizing * {
   width: min(100%, #{$inner-width}px);
   padding-inline: $inner-padding + px;
   margin-inline: auto;
-  margin-top: 65px;
-  @include md() {
-    margin-top: 81px;
-  }
-  @include lg() {
-    margin-top: 66px;
-  }
 }
 
 // ----------------------------

@@ -4,6 +4,13 @@
 .page-top-sec {
   padding: 80px 16px;
   background: var(--sec-gradient);
+  margin-top: 65px;
+  @include md() {
+    margin-top: 81px;
+  }
+  @include lg() {
+    margin-top: 66px;
+  }
 
   &__inner {
     width: min(100%, #{$i_content-width}px);
