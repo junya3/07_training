@@ -1,4 +1,11 @@
 include /component/pug/ui/_logo
 include /component/pug/ui/_button
+include /component/pug/ui/_nav-list
 
-mixin footer
+mixin footer(navList)
+  footer#footer.footer
+    .footer__inner
+      .footer__footer-top
+        h1.footer__logo
+          +logo
+      +nav-list("footer", navList)

@@ -1,6 +1,7 @@
 include /component/pug/ui/_logo
 include /component/pug/ui/_menu-btn
 include /component/pug/ui/_button
+include /component/pug/ui/_nav-list
 
 mixin header(navList)
   header#header.header
@@ -9,21 +10,8 @@ mixin header(navList)
         h1.header__logo
           +logo
         +menu-btn
-      nav.header__nav
-        ul.header__nav-list
-          each subNav, category in navList
-            li.header__nav-item.header__nav-item--has-children
-              //- 最初のリンクをカテゴリーのリンクとして使用
-              a.header__nav-link(href=Object.values(subNav)[0])= category
-              //- サブメニューが複数ある場合のみドロップダウン表示
-              if Object.keys(subNav).length > 1
-                ul.header__submenu
-                  each linkHref, linkText in subNav
-                    li.header__submenu-item
-                      a.header__submenu-link(href=linkHref)= linkText
-
-        //- メニューリストの構造を修正
-        ul.header__menu
+      +nav-list("header", navList)
+        .header__menu
           li.header__menu-item.login
             a.header__menu-link(href="/") ログイン
           li.header__menu-item

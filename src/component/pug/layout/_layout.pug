@@ -1,4 +1,5 @@
 include /component/pug/layout/_header
+include /component/pug/layout/_footer
 
 -
   const navList = {
@@ -63,7 +64,7 @@ html(lang="ja")
     //- ----------------------------
 
     block script
-      script(type="module", src="assets/js/main.js")
+      script(type="module", src="/assets/js/main.js")
       script(
         src="https://kit.fontawesome.com/739443d1a5.js",
         crossorigin="anonymous"
@@ -75,3 +76,4 @@ html(lang="ja")
     +header(navList)
     main
       block content
+    +footer(navList)
