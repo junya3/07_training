@@ -47,8 +47,10 @@
       display: flex;
       flex: 1;
       height: auto;
+      overflow-y: visible;
     }
     &-list {
+      position: relative;
       display: grid;
       flex: 1;
       gap: 0.5rem;
@@ -63,6 +65,7 @@
     }
     &-item {
       display: grid;
+      position: relative;
       @include lg() {
         align-content: center;
       }
@@ -70,8 +73,14 @@
     &-link {
       @include font($font, 16, 500, 1.5);
       color: var(--text-black-100);
+      position: relative;
+      z-index: 20;
+
       @include hover() {
         color: var(--primary-color-100);
+        & ~ .header__submenu {
+          display: block;
+        }
       }
     }
   }
@@ -84,10 +93,39 @@
     @include lg() {
       position: absolute;
       display: none;
+      z-index: 1;
+
+      width: max-content;
+      top: 100%;
+      left: 50%;
+      translate: -50% 8px;
+
+      padding: 16px;
+      border-radius: 8px;
+      background: var(--color-white-semi-80);
+      border: 1px solid var(--color-black-80);
+      @include hover() {
+        display: block;
+      }
+
+      &::before {
+        // hover補助
+        content: "";
+        margin: auto;
+        inset: 0;
+        position: absolute;
+        translate: 0 -50%;
+        z-index: -1;
+      }
+
+      & > * + * {
+        margin-top: 8px;
+      }
     }
     &-link {
       @include font($font, 14, 400, 1.5);
       color: var(--text-black-100);
+      display: block;
       @include hover() {
         color: var(--primary-color-100);
       }
