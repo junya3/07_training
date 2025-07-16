@@ -9,7 +9,10 @@
   margin-bottom: 60px;
 
   &__title {
-    @include font($font, 36, 700, 1.25);
+    @include font($font, 30, 700, 1.25);
+    @include md() {
+      @include font($font, 36, 700, 1.25);
+    }
   }
   &__desc {
     @include font($font, 18, 400, 1.5);
