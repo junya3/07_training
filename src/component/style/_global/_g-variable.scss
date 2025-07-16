@@ -46,13 +46,16 @@ $base-font-size: 16;
 
   --color-green: #16a34a;
   --color-yellow: #facc15;
+  --color-orange: #ea580c;
+  --color-pink: #db2777;
 
   --color-gray: #f9f9f9;
   --color-white: #ffffff;
 
   --color-black: #000000;
   --color-black-20: hsl(from var(--color-black) h s calc(l + 20));
-  --color-black-60: hsl(from var(--color-black) h s calc(l + 40));
+  --color-black-40: hsl(from var(--color-black) h s calc(l + 40));
+  --color-black-60: hsl(from var(--color-black) h s calc(l + 60));
   --color-black-80: hsl(from var(--color-black) h s calc(l + 80));
   --color-black-85: hsl(from var(--color-black) h s calc(l + 85));
 

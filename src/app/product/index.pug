@@ -1,9 +1,10 @@
 extends /component/pug/layout/_layout
+include /component/pug/ui/_page-title
+include /component/pug/pages/product/_core-func
 
 block prepend title
   - const pageTitle = "商品について";
 
 block content
-  section.page-top-sec
-    .container.page-top-sec__container
-      h2 こんにちは
+  +page-title("強力な機能で", "チームを加速", "", "FlowSyncの包括的な機能セットで、チームの可能性を最大限に引き出しましょう。 生産性向上のために設計された、すべてのツールがここにあります。") 
+  +core-func

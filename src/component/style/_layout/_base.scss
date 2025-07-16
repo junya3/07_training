@@ -57,6 +57,27 @@ body.is-resizing * {
 }
 
 // ----------------------------
+// icon-color
+// ----------------------------
+.icon {
+  .blue {
+    color: var(--color-blue);
+  }
+  .green {
+    color: var(--color-green);
+  }
+  .purple {
+    color: var(--color-purple);
+  }
+  .orange {
+    color: var(--color-orange);
+  }
+  .pink {
+    color: var(--color-pink);
+  }
+}
+
+// ----------------------------
 // card-grid
 // ----------------------------
 
@@ -69,7 +90,7 @@ body.is-resizing * {
 
   @include md() {
     &-2 {
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     }
     &-3 {
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));

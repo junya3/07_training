@@ -1,0 +1,51 @@
+@use "style/_global/g-mixin" as *;
+@use "style/_global/g-variable" as *;
+
+.core-func {
+  &__list {
+    &.col-2 {
+      gap: 48px;
+    }
+
+    &-item {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: max-content 1fr;
+    }
+    &-icon {
+      width: 64px;
+      aspect-ratio: 1/1;
+      text-align: center;
+      background: var(--color-gray);
+      border-radius: 8px;
+      font-size: 40px;
+    }
+
+    &-right {
+      display: grid;
+      gap: 8px;
+      @include font($font, 16, 400, 1.5);
+    }
+    &-title {
+      @include font($font, 24, 700, 1.5);
+    }
+    &-desc {
+      color: var(--color-black-40);
+    }
+    &-point {
+      @include font($font, 14, 400, 1.5);
+      color: var(--color-black-60);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      &::before {
+        content: "";
+        width: 4px;
+        height: 4px;
+        border-radius: 4px;
+        background: var(--primary-color-100);
+      }
+    }
+  }
+}

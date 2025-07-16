@@ -1,0 +1,92 @@
+include /component/pug/ui/_sec-title
+
+mixin core-func
+  -
+    const coreList = [
+      {
+        icon: 'bolt',
+        iconColor: 'blue',
+        title: 'リアルタイム同期',
+        desc: 'チーム全体で瞬時に情報を共有。遅延なしのリアルタイムコラボレーションを実現します。',
+        point: [
+          '瞬時の更新',
+          '競合の自動解決',
+          'オフライン対応'
+        ]
+      },
+      {
+        icon: 'people-group',
+        iconColor: 'green',
+        title: 'チームコラボレーション',
+        desc: 'シームレスなコミュニケーションとプロジェクト管理で、チームを一つにまとめます。',
+        point: [
+          '統合チャット',
+          'タスク管理',
+          'ファイル共有'
+        ]
+      },
+      {
+        icon: 'shield-halved',
+        iconColor: 'purple',
+        title: 'エンタープライズセキュリティ',
+        desc: '銀行レベルのセキュリティとエンドツーエンド暗号化で、データを完全に保護します。',
+        point: [
+          '256bit暗号化',
+          '2要素認証',
+          '監査ログ'
+        ]
+      },
+      {
+        icon: 'chart-line',
+        iconColor: 'orange',
+        title: '高度な分析',
+        desc: '詳細なレポートと分析により、チームの生産性に関する洞察を得られます。',
+        point: [
+          'パフォーマンス指標',
+          'カスタムレポート',
+          '予測分析'
+        ]
+      },
+      {
+        icon: 'comment-dots',
+        iconColor: 'blue',
+        title: 'スマート通知',
+        desc: 'AI搭載の通知システムが、重要な情報だけを適切なタイミングでお知らせします。',
+        point: [
+          'AI優先度判定',
+          'カスタム設定',
+          '統合アラート'
+        ]
+      },
+      {
+        icon: 'calendar-days',
+        iconColor: 'pink',
+        title: '統合カレンダー',
+        desc: '完全統合されたカレンダーシステムで、締切と会議を効率的に管理できます。',
+        point: [
+          'スケジュール同期',
+          '会議統合',
+          'リマインダー'
+        ]
+      }
+    ];
+
+
+  section.core-func
+    .container
+      +sec-title("コア機能", "チームの成功を支える6つの主要機能")
+
+      ul.core-func__list.col-2.col
+        each item in coreList
+          li.core-func__list-item
+            if item.icon
+              .core-func__list-icon.icon: i(
+                class=`fa-${item.icon} ${item.iconColor} fa-solid`
+              )
+            .core-func__list-right
+              h3.core-func__list-title= item.title
+              p.core-func__list-desc= item.desc
+              if item.point.length
+                ul.core-func__list-points
+                  each point in item.point
+                    li.core-func__list-point= point

@@ -1,0 +1,35 @@
+@use "style/_global/g-mixin" as *;
+@use "style/_global/g-variable" as *;
+
+.page-title {
+  padding: 80px 16px;
+  background: var(--sec-gradient);
+  margin-top: 65px;
+  @include md() {
+    margin-top: 81px;
+  }
+  @include lg() {
+    margin-top: 66px;
+  }
+
+  &__inner {
+    width: min(100%, #{$i_content-width}px);
+    padding-block: 32px;
+    margin-inline: auto;
+    display: grid;
+    gap: 24px;
+
+    text-align: center;
+  }
+
+  &__title {
+    @include font($font, 36, 600, 1.5);
+    @include md() {
+      @include font($font, 48, 600, 1.5);
+    }
+  }
+  &__text {
+    @include font($font, 20, 400, 1.5);
+    text-wrap: balance;
+  }
+}
