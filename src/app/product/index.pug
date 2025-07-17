@@ -1,7 +1,9 @@
 extends /component/pug/layout/_layout
 include /component/pug/ui/_page-title
+include /component/pug/ui/_banner
 include /component/pug/pages/product/_core-func
 include /component/pug/pages/product/_other-func
+include /component/pug/pages/product/_tool-integration
 
 block prepend title
   - const pageTitle = "商品について";
@@ -10,3 +12,5 @@ block content
   +page-title("強力な機能で", "チームを加速", "", "FlowSyncの包括的な機能セットで、チームの可能性を最大限に引き出しましょう。 生産性向上のために設計された、すべてのツールがここにあります。") 
   +core-func
   +other-func 
+  +tool-integration
+  +banner("これらの機能を今すぐ体験", "14日間の無料トライアルで、すべての機能をお試しください", { label: "無料トライアル開始", href: "/", style: "white-solid" })

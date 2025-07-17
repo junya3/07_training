@@ -1,0 +1,30 @@
+include /component/pug/ui/_sec-title
+include /component/pug/ui/_color-box
+
+mixin tool-integration
+  -
+    const tools = [
+      { initial: 'S', name: 'Slack' },
+      { initial: 'M', name: 'Microsoft Teams' },
+      { initial: 'G', name: 'Google Workspace' },
+      { initial: 'Z', name: 'Zoom' },
+      { initial: 'T', name: 'Trello' },
+      { initial: 'A', name: 'Asana' },
+      { initial: 'G', name: 'GitHub' },
+      { initial: 'F', name: 'Figma' },
+      { initial: 'N', name: 'Notion' },
+      { initial: 'S', name: 'Salesforce' },
+      { initial: 'D', name: 'Dropbox' },
+      { initial: 'O', name: 'OneDrive' },
+    ]
+
+
+  section.tool-intergration
+    .container
+      +sec-title("既存ツールとの統合", "お使いのツールとシームレスに連携")
+
+      ul.tool-list.col.col-6
+        each item in tools
+          li.tool-list__item
+            +color-box= item.initial
+            p.tool-list__item-name= item.name

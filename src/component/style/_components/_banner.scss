@@ -1,9 +1,11 @@
 @use "style/_global/g-mixin" as *;
 @use "style/_global/g-variable" as *;
 
-.banner {
+section.banner {
   background: var(--gradient);
+}
 
+.banner {
   .heading {
     color: var(--color-white);
 
