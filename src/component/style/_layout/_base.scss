@@ -1,5 +1,5 @@
-@use "style/_global/g-variable" as *;
-@use "style/_global/g-mixin" as *;
+@use 'style/_global/g-variable' as *;
+@use 'style/_global/g-mixin' as *;
 
 // ----------------------------
 // default
@@ -9,6 +9,7 @@
 }
 html {
   @include font($font, $base-font-size, 400, 1.5);
+  font-feature-settings: 'palt';
   overflow-x: hidden;
   letter-spacing: 0.04em;
 }
