@@ -1,0 +1,52 @@
+@use 'style/_global' as *;
+
+.toggle-button {
+  width: fit-content;
+  height: fit-content;
+  margin-inline: auto;
+
+  position: relative;
+  display: flex;
+
+  padding: 4px;
+  border-radius: 12px;
+  background: var(--color-black-85);
+
+  input[type='radio'] {
+    display: none;
+  }
+  input[type='radio']:checked + .toggle-button__button {
+    anchor-name: --button;
+    @supports not (anchor-name: --button) {
+      background: var(--color-white);
+    }
+  }
+
+  &__button {
+    @include font($font, 16, 400, 1);
+    display: block;
+
+    padding: 14px 20px;
+    border-radius: 8px;
+    background: #0000;
+
+    position: relative;
+    z-index: 2;
+
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: anchor(--button start);
+    z-index: 1;
+    width: anchor-size(--button inline);
+    height: anchor-size(--button block);
+    background: var(--color-white);
+    border-radius: 8px;
+    transition: 0.3s;
+  }
+}
