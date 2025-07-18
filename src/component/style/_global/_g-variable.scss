@@ -58,6 +58,7 @@ $base-font-size: 16;
   --color-black-60: hsl(from var(--color-black) h s calc(l + 60));
   --color-black-80: hsl(from var(--color-black) h s calc(l + 80));
   --color-black-85: hsl(from var(--color-black) h s calc(l + 85));
+  --color-black-90: hsl(from var(--color-black) h s calc(l + 90));
 
   --text-black-100: var(--color-black-20);
   --text-black-80: var(--color-black-80);
