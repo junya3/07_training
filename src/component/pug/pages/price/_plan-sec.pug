@@ -1,0 +1,83 @@
+mixin plan-sec
+  -
+    const plans = {
+      starter: {
+        name: 'スターター',
+        unit: 'ユーザー/月',
+        description: '小規模チーム向けの基本プラン',
+        features: [
+          '最大5名のチームメンバー',
+          '基本的なプロジェクト管理',
+          '24時間メールサポート',
+          '5GBストレージ',
+          '基本分析機能'
+        ],
+        unavailableFeatures: [
+          '高度な統合機能',
+          'カスタムワークフロー',
+          '優先サポート'
+        ],
+        button: 'プランを選択'
+      },
+      professional: {
+        name: 'プロフェッショナル',
+        unit: 'ユーザー/月',
+        description: '成長するチーム向けの充実プラン',
+        tag: '最も人気',
+        features: [
+          '最大25名のチームメンバー',
+          '高度なプロジェクト管理',
+          '優先サポート',
+          '100GBストレージ',
+          '高度な分析機能',
+          'カスタム統合',
+          'ワークフロー自動化'
+        ],
+        unavailableFeatures: [
+          'ホワイトラベル対応',
+          'カスタム開発サポート'
+        ],
+        button: '無料トライアル開始'
+      },
+      enterprise: {
+        name: 'エンタープライズ',
+        unit: 'ユーザー/月',
+        description: '大規模組織向けの包括的プラン',
+        features: [
+          '無制限のチームメンバー',
+          'エンタープライズプロジェクト管理',
+          '24時間電話サポート',
+          '無制限ストレージ',
+          '高度な分析・レポート機能',
+          'カスタム統合',
+          '高度なワークフロー自動化',
+          'ホワイトラベル対応',
+          'カスタム開発サポート',
+          '専任アカウントマネージャー'
+        ],
+        button: 'プランを選択'
+      }
+    };
+
+
+
+  section.plan
+    .container
+      ul.plan__list.col.col-3
+        each plan in plans
+          .plan__item(class=plan.popular ? 'is-popular' : '')
+            if plan.tag
+              p.plan__item-tag= plan.tag
+            hgroup.plan__detail
+              h3.plan__item-title= plan.name
+              p.plan__item-price
+                span.plan__item-unit= plan.unit
+              p.plan__item-description= plan.description
+            ul.plan__item-features
+              each feature in plan.features
+                li.plan__item-feature= feature
+              if plan.unavailableFeatures
+                each missing in plan.unavailableFeatures
+                  li.plan__item-missing= missing
+
+            button.plan__item-button= plan.button

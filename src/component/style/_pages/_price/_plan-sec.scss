@@ -1,0 +1,33 @@
+@use 'style/_global' as *;
+
+.plan {
+  &__item {
+    border: 2px solid var(--color-black-90);
+    border-radius: 16px;
+    box-shadow: var(--box-shadow);
+    padding: 32px;
+
+    position: relative;
+
+    &:nth-of-type(2) {
+      border-color: var(--color-blue-10);
+    }
+  }
+  &__item-tag {
+    position: absolute;
+    top: 0;
+    inset-inline: 0;
+    margin: auto;
+    translate: 0 -50%;
+
+    width: fit-content;
+    padding: 8px 16px;
+    border-radius: 999px;
+
+    background: var(--color-blue-10);
+    color: var(--color-white);
+  }
+  &__detail {
+    text-align: center;
+  }
+}

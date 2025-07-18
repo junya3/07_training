@@ -1,7 +1,10 @@
 extends /component/pug/layout/_layout
 include /component/pug/ui/_page-title
 include /component/pug/ui/_toggle-button
+include /component/pug/pages/price/_plan-sec
 
 block content
   +page-title('チームに最適な', 'プラン', 'を選択', '無料トライアルから始めて、チームの成長に合わせてスケールアップ。 すべてのプランにコア機能が含まれています。')
     +toggle-button('月額', '年額（20%OFF）', 'plan', '1', '2')
+
+  +plan-sec

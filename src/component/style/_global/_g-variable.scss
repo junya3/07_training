@@ -38,6 +38,7 @@ $base-font-size: 16;
   --box-bg-color: hsl(from var(--primary-color-100) h s calc(l + 20));
 
   --color-blue: var(--primary-color-100);
+  --color-blue-10: hsl(from var(--color-blue) h s calc(l + 10));
   --color-blue-40: hsl(from var(--color-blue) h s calc(l + 40));
 
   --color-dark-blue-10: hsl(from var(--color-blue) h s calc(l - 10));
