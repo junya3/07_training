@@ -23,7 +23,7 @@ mixin plan-sec
         name: 'プロフェッショナル',
         unit: 'ユーザー/月',
         description: '成長するチーム向けの充実プラン',
-        tag: '最も人気',
+        tag: '☆ 最も人気',
         features: [
           '最大25名のチームメンバー',
           '高度なプロジェクト管理',
@@ -71,7 +71,8 @@ mixin plan-sec
             hgroup.plan__detail
               h3.plan__item-title= plan.name
               p.plan__item-price
-                span.plan__item-unit= plan.unit
+                span.plan__item-price-num 900
+                span.plan__item-price-unit= plan.unit
               p.plan__item-description= plan.description
             ul.plan__item-features
               each feature in plan.features
