@@ -1,0 +1,38 @@
+include /component/pug/ui/_sec-title
+include /component/pug/ui/_detail
+
+mixin faq
+  -
+    const list = [
+      {
+        title: 'FlowSyncは無料で使えますか？',
+        detail: 'はい、14日間の無料トライアルをご利用いただけます。その後は月額980円からのプランをご用意しています。',
+      },
+      {
+        title: 'チームメンバーの上限はありますか？',
+        detail: 'プランによって異なります。スタータープランは5名まで、プロフェッショナルプランは25名まで、エンタープライズプランは無制限です。',
+      },
+      {
+        title: 'データのバックアップは自動で行われますか？',
+        detail: 'はい、すべてのデータは自動的にバックアップされ、複数のデータセンターに冗長化されて保存されています。',
+      },
+      {
+        title: '他のツールからデータを移行できますか？',
+        detail: '主要なプロジェクト管理ツール（Trello、Asana、Jiraなど）からのデータ移行をサポートしています。',
+      },
+      {
+        title: 'モバイルアプリはありますか？',
+        detail: 'はい、iOS・Android向けのネイティブアプリをご提供しています。App StoreやGoogle Playからダウンロードできます。',
+      },
+      {
+        title: 'セキュリティ対策について教えてください',
+        detail: '256ビットSSL暗号化、2要素認証、SOC2 Type II認証など、企業レベルのセキュリティ対策を実装しています。',
+      },
+    ]
+
+  section.faq
+    .container
+      +sec-title('よくあるご質問')
+      .faq__inner
+        each item in list
+          +detail(item.title, item.detail, 'faq')

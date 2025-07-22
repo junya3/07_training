@@ -3,6 +3,8 @@ include /component/pug/ui/_page-title
 include /component/pug/ui/_toggle-button
 include /component/pug/pages/price/_plan-sec
 include /component/pug/pages/price/_feature-table
+include /component/pug/ui/_banner
+include /component/pug/ui/_faq
 
 block content
   +page-title('チームに最適な', 'プラン', 'を選択', '無料トライアルから始めて、チームの成長に合わせてスケールアップ。 すべてのプランにコア機能が含まれています。')
@@ -10,3 +12,5 @@ block content
 
   +plan-sec
   +feature-table
+  +faq
+  +banner('今すぐ始めましょう', '14日間の無料トライアルで、FlowSyncの威力を体験してください', { label: '無料トライアル開始', href: '/', style: 'white-solid' })

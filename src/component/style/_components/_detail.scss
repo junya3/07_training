@@ -1,0 +1,51 @@
+@use 'style/_global' as *;
+
+.detail {
+  max-width: $i-content-width + px;
+  width: 100%;
+  margin-inline: auto;
+  border-radius: 16px;
+
+  background: var(--color-gray);
+
+  &[open] {
+    .marker__line:nth-of-type(2) {
+      rotate: 0deg;
+    }
+  }
+
+  &__summary {
+    &-inner {
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      @include font($font, 18, 600, 1.5);
+    }
+    .marker {
+      width: 24px;
+      height: 24px;
+      margin-left: auto;
+      position: relative;
+      &__line {
+        display: block;
+        position: absolute;
+        inset: 0;
+        margin: auto;
+
+        width: 16px;
+        height: 2px;
+        border-radius: 2px;
+        background: var(--color-black-40);
+
+        &:nth-of-type(2) {
+          transition: rotate 0.2s;
+          rotate: 90deg;
+        }
+      }
+    }
+  }
+  &__desc {
+    padding: 0 24px 24px;
+    color: var(--color-black-40);
+  }
+}
