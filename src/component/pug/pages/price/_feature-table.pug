@@ -30,29 +30,29 @@ mixin feature-table
     };
 
 
-  section#feature-table
+  section#feature-table.feature-table
     .container
       +sec-title('機能比較表', '各プランの詳細な機能比較')
-      table
-        thead
-          tr
-            th= features.faq[0]
+      table.f__table
+        thead.f__table-header
+          tr.f__table-row
+            th.f__table-head= features.faq[0]
             each plan in features.plans
-              th= plan.name
+              th.f__table-head= plan.name
 
-        tbody
+        tbody.f__table-body
           each label, i in features.faq
             if i !== 0
-              tr
-                td= label
+              tr.f__table-row
+                td.f__table-desc= label
                 each plan in features.plans
-                  td
+                  td.f__table-desc
                     - const keys = ['menber', 'strage', 'support', 'custom'];
                     - const key = keys[i - 1];
                     if key === 'custom'
                       if plan[key]
-                        | ✓
+                        span.icon: i.fa-check.enabled.fa-solid
                       else
-                        | ✗
+                        span.icon: i.fa-xmark.disabled.fa-solid
                     else
                       = plan[key]

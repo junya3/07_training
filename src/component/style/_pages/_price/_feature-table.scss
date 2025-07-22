@@ -1,0 +1,37 @@
+@use 'style/_global' as *;
+
+.feature-table {
+  .f__table {
+    @include font($font, 14, 400, 1.5);
+    display: grid;
+    border-radius: 8px;
+    overflow: hidden;
+
+    box-shadow: var(--box-shadow);
+    &-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    &-body {
+      & > * + * {
+        border-top: 1px solid var(--color-black-90);
+      }
+    }
+    &-head,
+    &-desc {
+      padding: 10px 8px;
+      @include md() {
+        padding: 14px 28px;
+      }
+    }
+    &-head {
+      background: var(--color-black-90);
+    }
+    &-desc {
+      background: var(--color-white);
+      & + * {
+        text-align: center;
+      }
+    }
+  }
+}
