@@ -1,3 +1,5 @@
+include /component/pug/ui/_button
+
 mixin plan-sec
   -
     const plans = {
@@ -74,11 +76,18 @@ mixin plan-sec
                 span.plan__item-price-num 900
                 span.plan__item-price-unit= plan.unit
               p.plan__item-description= plan.description
-            ul.plan__item-features
+            ul.plan__list
               each feature in plan.features
-                li.plan__item-feature= feature
+                li.plan__list-item.plan__list-item--enabled
+                  span.plan__list-icon.icon: i(class='fa-check enabled fa-solid')
+                  span.plan__list-text= feature
               if plan.unavailableFeatures
                 each missing in plan.unavailableFeatures
-                  li.plan__item-missing= missing
+                  li.plan__list-item.plan__list-item--disabled
+                    span.plan__list-icon.icon: i(class='fa-xmark disabled fa-solid')
+                    span.plan__list-text= missing
 
-            button.plan__item-button= plan.button
+            if plan.tag
+              +button(plan.button, '/')
+            else
+              +button(plan.button, '/', 'gray-solid')

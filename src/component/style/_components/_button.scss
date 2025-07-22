@@ -1,5 +1,5 @@
-@use "style/_global/g-mixin" as *;
-@use "style/_global/g-variable" as *;
+@use 'style/_global/g-mixin' as *;
+@use 'style/_global/g-variable' as *;
 
 .button {
   display: block;
@@ -47,6 +47,25 @@
     @include hover() {
       background-color: var(--color-white);
       color: var(--primary-color-100);
+    }
+  }
+
+  &--gray-solid {
+    background-color: var(--color-gray);
+    color: var(--color-black);
+    border-color: var(--color-gray);
+    @include hover() {
+      background-color: var(--color-black);
+      color: var(--color-gray);
+    }
+  }
+  &--black-outline {
+    background-color: #0000;
+    color: var(--color-black);
+    border-color: var(--color-black);
+    @include hover() {
+      background-color: var(--color-black);
+      color: var(--color-white);
     }
   }
 }

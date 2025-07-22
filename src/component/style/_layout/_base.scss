@@ -31,6 +31,9 @@ a {
 img {
   object-fit: cover;
 }
+button {
+  cursor: pointer;
+}
 /* リサイズ中はtransitionを無効化 */
 body.is-resizing * {
   transition: none !important;
@@ -64,7 +67,8 @@ body.is-resizing * {
   .blue {
     color: var(--color-blue);
   }
-  .green {
+  .green,
+  .enabled {
     color: var(--color-green);
   }
   .purple {
@@ -78,6 +82,10 @@ body.is-resizing * {
   }
   .yellow {
     color: var(--color-yellow);
+  }
+  .gray,
+  .disabled {
+    color: var(--color-black-80);
   }
 }
 
