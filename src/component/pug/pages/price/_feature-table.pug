@@ -1,0 +1,58 @@
+include /component/pug/ui/_sec-title
+
+mixin feature-table
+  -
+    const features = {
+      faq: ['機能', 'チームメンバー数', 'ストレージ', 'サポート', 'カスタム統合'],
+      plans: [
+        {
+          name: 'スターター',
+          menber: '最大5名様',
+          strage: '5GB',
+          support: 'メール',
+          custom: false
+        },
+        {
+          name: 'プロフェッショナル',
+          menber: '最大25名様',
+          strage: '100GB',
+          support: '優先サポート',
+          custom: true
+        },
+        {
+          name: 'エンタープライズ',
+          menber: '無制限',
+          strage: '無制限',
+          support: '24時間電話対応',
+          custom: true
+        }
+      ]
+    };
+
+
+  section#feature-table
+    .container
+      +sec-title('機能比較表', '各プランの詳細な機能比較')
+      table
+        thead
+          tr
+            th= features.faq[0]
+            each plan in features.plans
+              th= plan.name
+
+        tbody
+          each label, i in features.faq
+            if i !== 0
+              tr
+                td= label
+                each plan in features.plans
+                  td
+                    - const keys = ['menber', 'strage', 'support', 'custom'];
+                    - const key = keys[i - 1];
+                    if key === 'custom'
+                      if plan[key]
+                        | ✓
+                      else
+                        | ✗
+                    else
+                      = plan[key]
