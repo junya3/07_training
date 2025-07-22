@@ -1,4 +1,5 @@
 include /component/pug/ui/_button
+include /component/pug/ui/_link
 
 mixin plan-sec
   -
@@ -79,15 +80,18 @@ mixin plan-sec
             ul.plan__list
               each feature in plan.features
                 li.plan__list-item.plan__list-item--enabled
-                  span.plan__list-icon.icon: i(class='fa-check enabled fa-solid')
+                  span.plan__list-icon.icon: i.fa-check.enabled.fa-solid
                   span.plan__list-text= feature
               if plan.unavailableFeatures
                 each missing in plan.unavailableFeatures
                   li.plan__list-item.plan__list-item--disabled
-                    span.plan__list-icon.icon: i(class='fa-xmark disabled fa-solid')
+                    span.plan__list-icon.icon: i.fa-xmark.disabled.fa-solid
                     span.plan__list-text= missing
 
             if plan.tag
               +button(plan.button, '/')
             else
               +button(plan.button, '/', 'gray-solid')
+
+      p.small-text すべてのプランに14日間の無料トライアル付き。クレジットカード不要。
+      +link('カスタムプランが必要ですか？営業チームにお問い合わせください →', '/')

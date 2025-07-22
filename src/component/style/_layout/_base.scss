@@ -59,6 +59,11 @@ body.is-resizing * {
   -webkit-background-clip: text;
   background-clip: text;
 }
+.small-text {
+  text-align: center;
+  margin-bottom: 36px;
+  @include font($font, 14, 400, 1.5);
+}
 
 // ----------------------------
 // icon-color

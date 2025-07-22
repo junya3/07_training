@@ -1,5 +1,5 @@
-@use "style/_global/g-mixin" as *;
-@use "style/_global/g-variable" as *;
+@use 'style/_global/g-mixin' as *;
+@use 'style/_global/g-variable' as *;
 
 .mv {
   &__buttons {
@@ -18,11 +18,6 @@
     padding: 20px 30px;
     margin-inline: auto;
     @include font($font, 16, 500, 1);
-  }
-  &__small-text {
-    text-align: center;
-    margin-bottom: 36px;
-    @include font($font, 14, 400, 1.5);
   }
   &__ky {
     height: 400px;
