@@ -1,5 +1,5 @@
-@use "style/_global/g-mixin" as *;
-@use "style/_global/g-variable" as *;
+@use 'style/_global/g-mixin' as *;
+@use 'style/_global/g-variable' as *;
 
 .page-title {
   padding: 80px 16px;
@@ -23,7 +23,7 @@
   }
 
   &__title {
-    @include font($font, 36, 600, 1.5);
+    @include font($font, 28, 600, 1.5);
     @include md() {
       @include font($font, 48, 600, 1.5);
     }

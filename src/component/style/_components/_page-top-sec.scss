@@ -1,5 +1,5 @@
-@use "style/_global/g-mixin" as *;
-@use "style/_global/g-variable" as *;
+@use 'style/_global/g-mixin' as *;
+@use 'style/_global/g-variable' as *;
 
 .page-top-sec {
   padding: 80px 16px;
@@ -24,7 +24,7 @@
     gap: 24px;
   }
   &__title {
-    @include font($font, 36, 600, 1.5);
+    @include font($font, 28, 600, 1.5);
     @include md() {
       @include font($font, 60, 600, 1.5);
     }

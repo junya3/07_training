@@ -1,5 +1,5 @@
-@use "style/_global/g-variable" as *;
-@use "style/_global/g-mixin" as *;
+@use 'style/_global/g-variable' as *;
+@use 'style/_global/g-mixin' as *;
 
 .heading {
   display: grid;
@@ -9,7 +9,7 @@
   margin-bottom: 60px;
 
   &__title {
-    @include font($font, 30, 700, 1.25);
+    @include font($font, 24, 700, 1.25);
     @include md() {
       @include font($font, 36, 700, 1.25);
     }
