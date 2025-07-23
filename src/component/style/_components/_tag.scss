@@ -1,0 +1,20 @@
+@use 'style/_global' as *;
+
+.tag {
+  padding: 8px 16px;
+  background: var(--color-gray);
+  width: fit-content;
+  text-align: center;
+
+  border-radius: 4px;
+
+  &-blue {
+    color: var(--color-blue);
+    background: var(--color-blue-40);
+  }
+
+  &-green {
+    color: var(--color-green);
+    background: var(--color-green-50);
+  }
+}

@@ -2,6 +2,7 @@ extends /component/pug/layout/_layout
 include /component/pug/ui/_page-title
 include /component/pug/pages/api/_api-overview
 include /component/pug/pages/api/_code-integration
+include /component/pug/pages/api/_api-endpoint
 
 block prepend title
   -
@@ -11,3 +12,4 @@ block content
   +page-title('強力な', 'API', 'で拡張', 'FlowSync APIを使用して、既存のワークフローに統合し、 カスタムアプリケーションを構築しましょう。', 'code')
   +api-overview 
   +code-integration 
+  +api-endpoint

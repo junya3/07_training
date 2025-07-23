@@ -1,0 +1,9 @@
+include /component/pug/ui/_tag
+
+mixin endpoint-card(list)
+  ul.endpoint-card&attributes(attributes)
+    each item in list
+      li.endpoint-card__item
+        +tag(item.tag, item.tagColor)
+        p.endpoint-card__item-text= item.text
+        p.endpoint-card__item-sub-text= item.sub

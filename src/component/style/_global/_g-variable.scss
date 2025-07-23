@@ -66,6 +66,8 @@ $base-font-size: 16;
   --text-black-80: var(--color-black-80);
 
   --color-green-20: hsl(from var(--color-green) h s calc(l + 20));
+  --color-green-40: hsl(from var(--color-green) h s calc(l + 40));
+  --color-green-50: hsl(from var(--color-green) h s calc(l + 50));
 
   --color-white-semi-80: color-mix(in srgb, var(--color-white) 80%, #0000);
   --box-shadow: 0 4px 20px 0 var(--color-black-85);

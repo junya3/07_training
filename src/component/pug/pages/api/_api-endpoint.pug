@@ -1,0 +1,38 @@
+include /component/pug/ui/_sec-title
+include /component/pug/ui/_endpoint-card
+
+mixin api-endpoint
+  -
+    const items = [
+      {
+        tag: 'GET',
+        tagColor: 'blue',
+        text: '/api/v1/projects',
+        sub: 'プロジェクト一覧を取得',
+      },
+      {
+        tag: 'POST',
+        tagColor: 'green',
+        text: '/api/v1/projects',
+        sub: '新しいプロジェクトを作成',
+      },
+      {
+        tag: 'GET',
+        tagColor: 'blue',
+        text: '/api/v1/tasks',
+        sub: 'タスク一覧を取得',
+      },
+      {
+        tag: 'POST',
+        tagColor: 'green',
+        text: '/api/v1/tasks',
+        sub: '新しいタスクを作成',
+      },
+    ]
+  
+
+
+  section#api-endpoint.api-endpoint
+    .container
+      +sec-title('主要エンドポイント')
+      +endpoint-card(items)
