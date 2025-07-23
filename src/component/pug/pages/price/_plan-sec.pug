@@ -6,7 +6,7 @@ mixin plan-sec
     const plans = {
       starter: {
         name: 'スターター',
-        unit: 'ユーザー/月',
+        unit: '円 / 月',
         description: '小規模チーム向けの基本プラン',
         features: [
           '最大5名のチームメンバー',
@@ -24,7 +24,7 @@ mixin plan-sec
       },
       professional: {
         name: 'プロフェッショナル',
-        unit: 'ユーザー/月',
+        unit: '円 / 月',
         description: '成長するチーム向けの充実プラン',
         tag: '☆ 最も人気',
         features: [
@@ -44,7 +44,7 @@ mixin plan-sec
       },
       enterprise: {
         name: 'エンタープライズ',
-        unit: 'ユーザー/月',
+        unit: '円 / 月',
         description: '大規模組織向けの包括的プラン',
         features: [
           '無制限のチームメンバー',
@@ -74,7 +74,7 @@ mixin plan-sec
             hgroup.plan__detail
               h3.plan__item-title= plan.name
               p.plan__item-price
-                span.plan__item-price-num 900
+                span.plan__item-price-num
                 span.plan__item-price-unit= plan.unit
               p.plan__item-description= plan.description
             ul.plan__list

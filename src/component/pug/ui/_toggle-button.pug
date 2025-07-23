@@ -1,6 +1,6 @@
 mixin toggle-button(item1, item2, name, value1, value2)
   .toggle-button
-    input(type='radio', id=`${name}1`, name=name, value=value1, checked)
+    input(type='radio', data-toggle=name, id=`${name}1`, name=name, value=value1, checked)
     label.toggle-button__button(for=`${name}1`)= item1
-    input(type='radio', id=`${name}2`, name=name, value=value2)
+    input(type='radio', data-toggle=name, id=`${name}2`, name=name, value=value2)
     label.toggle-button__button(for=`${name}2`)= item2

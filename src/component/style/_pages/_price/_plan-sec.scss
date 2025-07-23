@@ -64,10 +64,6 @@
         align-items: baseline;
         gap: 4px;
         font-variant-numeric: tabular-nums;
-        &::before {
-          content: '\00A5';
-          @include font($font, 24, 700, 1.5);
-        }
       }
       &-unit {
         @include font($font, 16, 400, 1.5);
