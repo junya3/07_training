@@ -1,0 +1,35 @@
+include /component/pug/ui/_sec-title
+include /component/pug/ui/_info-card
+
+mixin api-overview
+  -
+    const items = [
+      {
+        icon: 'bolt',
+        iconColor: 'blue',
+        title: '高速・安定',
+        desc: '99.9%の稼働率と平均応答時間50ms以下を保証',
+      },
+      {
+        icon: 'shield',
+        iconColor: 'green',
+        title: 'セキュア',
+        desc: 'OAuth 2.0とAPIキー認証による安全なアクセス',
+      },
+      {
+        icon: 'globe',
+        iconColor: 'purple',
+        title: 'RESTful',
+        desc: '標準的なREST APIで簡単に統合可能',
+      },
+    ]
+
+
+
+
+  section.api-overview
+    .container
+      +sec-title('開発者に優しいAPI')
+      ul.api-overview__list.col.col-3
+        each item in items
+          +info-card(item.title, item.desc, item.icon, item.iconColor).center.white

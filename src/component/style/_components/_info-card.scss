@@ -1,5 +1,5 @@
-@use "style/_global/g-mixin" as *;
-@use "style/_global/g-variable" as *;
+@use 'style/_global/g-mixin' as *;
+@use 'style/_global/g-variable' as *;
 
 .info-card {
   background: var(--color-gray);
@@ -20,5 +20,16 @@
   }
   &.white {
     background: var(--color-white);
+  }
+  &.center {
+    text-align: center;
+    .info-card__icon {
+      background: var(--color-gray);
+      width: 60px;
+      height: 60px;
+      margin-inline: auto;
+      align-content: center;
+      border-radius: 8px;
+    }
   }
 }

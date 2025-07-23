@@ -106,16 +106,16 @@ body.is-resizing * {
   grid-template-columns: 1fr;
 
   &-6 {
-    grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 30px;
   }
 
   @include md() {
     &-2 {
-      grid-template-columns: repeat(auto-fit, minmax(400px, auto));
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     }
     &-3 {
-      grid-template-columns: repeat(auto-fit, minmax(350px, auto));
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     }
   }
 }
