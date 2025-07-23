@@ -1,8 +1,14 @@
-mixin page-title(title01, span, title02, description)
+include /component/pug/ui/_color-box
+
+mixin page-title(title01, span, title02, description, icon)
   section.page-title
     .container.page-top-sec__container
       hgroup.page-title__inner
-        h2.page-title__title #{ title01 }#[span.text-gradient フロー]#{ title02 }
+        if icon
+          +color-box.page-title__icon
+            .icon: i(class=`fa-${icon} white-solid fa-solid`)
+
+        h2.page-title__title #{ title01 }#[span.text-gradient= span]#{ title02 }
         p.page-title__text= description
 
       block

@@ -6,6 +6,11 @@ include /component/pug/pages/price/_feature-table
 include /component/pug/ui/_banner
 include /component/pug/ui/_faq
 
+block prepend title
+  -
+    const pageTitle = 'プラン一覧'
+
+
 block content
   +page-title('チームに最適な', 'プラン', 'を選択', '無料トライアルから始めて、チームの成長に合わせてスケールアップ。 すべてのプランにコア機能が含まれています。')
     +toggle-button('月額', '年額（20%OFF）', 'plan', '1', '2')

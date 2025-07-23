@@ -23,13 +23,23 @@
   }
 
   &__title {
-    @include font($font, 28, 600, 1.5);
+    @include font($font, 28, 600, 1);
     @include md() {
-      @include font($font, 48, 600, 1.5);
+      @include font($font, 48, 600, 1);
     }
   }
   &__text {
     @include font($font, 20, 400, 1.5);
     text-wrap: balance;
+  }
+
+  &__icon {
+    width: 60px;
+    height: 60px;
+    margin-inline: auto;
+    border-radius: 999px;
+    align-content: center;
+
+    @include font($font, 24, 700, 1);
   }
 }

@@ -1,0 +1,9 @@
+extends /component/pug/layout/_layout
+include /component/pug/ui/_page-title
+
+block prepend title
+  -
+    const pageTitle = 'APIについて'
+
+block content
+  +page-title('強力な', 'API', 'で拡張', 'FlowSync APIを使用して、既存のワークフローに統合し、 カスタムアプリケーションを構築しましょう。', 'code')
