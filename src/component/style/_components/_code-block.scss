@@ -1,0 +1,18 @@
+@use 'style/_global' as *;
+
+.code-block {
+  max-width: $i_content-width + px;
+  margin-inline: auto;
+  padding: 24px;
+  border-radius: 8px;
+  background: var(--color-black);
+  color: var(--color-green-20);
+
+  overflow-x: auto;
+
+  font-family: 'SFMono-Regular', sans-serif;
+  font-size: rem(14);
+  line-height: 1.5;
+
+  font-feature-settings: normal;
+}

@@ -1,0 +1,47 @@
+include /component/pug/ui/_sec-title
+include /component/pug/ui/_code-block
+
+mixin code-integration
+  section.code-integration
+    .container
+      +sec-title('簡単な統合', '数行のコードでFlowSyncと連携')
+      +code-block
+        | &gt;_ API Example
+        | // プロジェクト一覧を取得
+        | const response = await fetch('https://api.flowsync.com/v1/projects', {
+        |
+        | headers: {
+        |
+        | 'Authorization': 'Bearer YOUR_API_KEY',
+        |
+        | 'Content-Type': 'application/json'
+        |
+        | }
+        | });
+        |
+        | const projects = await response.json();
+        | console.log(projects);
+        |
+        | // 新しいタスクを作成
+        | const newTask = await fetch('https://api.flowsync.com/v1/tasks', {
+        |
+        | method: 'POST',
+        |
+        | headers: {
+        |
+        | 'Authorization': 'Bearer YOUR_API_KEY',
+        |
+        | 'Content-Type': 'application/json'
+        |
+        | },
+        |
+        | body: JSON.stringify({
+        |
+        | title: 'New Task',
+        |
+        | project_id: '12345',
+        |
+        | assignee: 'user@example.com'
+        |
+        | })
+        | });
