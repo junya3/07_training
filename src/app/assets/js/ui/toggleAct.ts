@@ -21,10 +21,11 @@ const price: PriceObject = {
   },
 };
 
-const priceBox = document.querySelectorAll<HTMLParagraphElement>('.plan__item-price-num');
-const toggleBtns = document.querySelectorAll<HTMLInputElement>('[data-toggle="plan"]');
-
 const toggleAct = () => {
+  const priceBox = document.querySelectorAll<HTMLParagraphElement>('.plan__item-price-num');
+  const toggleBtns = document.querySelectorAll<HTMLInputElement>('[data-toggle="plan"]');
+
+  if (!priceBox.length || !toggleBtns.length) return;
   if (priceBox && toggleBtns) {
     const checkConfirm = (): boolean[] => Array.from(toggleBtns).map((btn) => btn.checked);
 
