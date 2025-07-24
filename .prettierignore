@@ -1,3 +1,5 @@
 # Ignore artifacts:
 build
 coverage
+
+src/component/pug/pages/api/_code-integration.pug
