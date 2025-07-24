@@ -3,50 +3,48 @@ include /component/pug/ui/_info-card
 
 mixin other-func
   -
-    const others = [
+    const items = [
       {
         icon: 'globe',
         iconColor: 'blue',
         title: 'グローバル対応',
-        desc: '多言語サポートと世界中のデータセンター'
+        description: '多言語サポートと世界中のデータセンター'
       },
       {
         icon: 'mobile-screen-button',
         iconColor: 'green',
         title: 'モバイル最適化',
-        desc: 'iOS・Android対応のネイティブアプリ'
+        description: 'iOS・Android対応のネイティブアプリ'
       },
       {
         icon: 'user-shield',
         iconColor: 'pink',
         title: 'プライバシー保護',
-        desc: 'GDPR・CCPA完全準拠のデータ保護'
+        description: 'GDPR・CCPA完全準拠のデータ保護'
       },
       {
         icon: 'robot',
         iconColor: 'purple',
         title: 'ワークフロー自動化',
-        desc: '繰り返し作業の自動化とカスタムワークフロー'
+        description: '繰り返し作業の自動化とカスタムワークフロー'
       },
       {
         icon: 'bell',
         iconColor: 'yellow',
         title: '統合通知',
-        desc: 'Slack、Teams、Emailとの完全統合'
+        description: 'Slack、Teams、Emailとの完全統合'
       },
       {
         icon: 'file-lines',
         iconColor: 'orange',
         title: 'ドキュメント管理',
-        desc: 'バージョン管理付きドキュメント共有'
+        description: 'バージョン管理付きドキュメント共有'
       }
     ];
 
 
   section.other-func
     .container
-      +sec-title("その他の機能", "さらなる生産性向上のための追加機能")
+      +sec-title('その他の機能', 'さらなる生産性向上のための追加機能')
 
-      ul.other-func__cards.col.col-3
-        each item in others
-          +info-card(item.title, item.desc, item.icon, item.iconColor).white
+      +info-card(items, '', 'white')
