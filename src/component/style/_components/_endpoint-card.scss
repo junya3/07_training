@@ -6,17 +6,19 @@
 
   display: grid;
   gap: 16px;
-  grid-template-columns: max-content 1fr max-content;
+
+  @include md() {
+    grid-template-columns: max-content 1fr max-content;
+  }
 
   &__item {
     display: grid;
     grid-template-columns: subgrid;
-    grid-column: span 3;
     padding: 16px;
     background: var(--color-gray);
     border-radius: 8px;
+
     .tag {
-      width: auto;
       @include font($font, 14, 400, 1);
     }
     &-text {
@@ -25,7 +27,17 @@
     &-sub-text {
       @include font($font, 14, 400, 1.5);
       color: var(--color-black-40);
-      margin-left: auto;
+    }
+
+    @include md() {
+      grid-column: span 3;
+
+      .tag {
+        width: auto;
+      }
+      &-sub-text {
+        margin-left: auto;
+      }
     }
   }
 }
