@@ -1,5 +1,5 @@
 mixin info-card(items = [], position = '', color = '')
-  ul.col.col-3&attributes(attributes)
+  ul.col&attributes(attributes)
     each item in items
       li.info-card.card(class=`${position} ${color}`)
         if item.icon

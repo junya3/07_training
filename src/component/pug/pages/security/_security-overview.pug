@@ -1,43 +1,44 @@
 include /component/pug/ui/_sec-title
+include /component/pug/ui/_info-card
 
 mixin security-overview
   -
     const items = [
       {
         title: 'エンドツーエンド暗号化',
-        desc: 'すべてのデータは256ビットAES暗号化により、送信時・保存時ともに完全に保護されます。',
+        description: 'すべてのデータは256ビットAES暗号化により、送信時・保存時ともに完全に保護されます。',
         icon: 'lock',
-        iconColor: '',
+        iconColor: 'blue',
       },
       {
         title: 'ゼロ知識アーキテクチャ',
-        desc: '私たちでさえお客様のデータにアクセスできない、完全なプライバシー保護を実現。',
-        icon: 'user-secret',
-        iconColor: '',
+        description: '私たちでさえお客様のデータにアクセスできない、完全なプライバシー保護を実現。',
+        icon: 'eye',
+        iconColor: 'green',
       },
       {
         title: 'コンプライアンス準拠',
-        desc: 'GDPR、CCPA、SOX法など、主要な規制要件に完全準拠しています。',
+        description: 'GDPR、CCPA、SOX法など、主要な規制要件に完全準拠しています。',
         icon: 'file-shield',
-        iconColor: '',
+        iconColor: 'purple',
       },
       {
         title: 'セキュアインフラ',
-        desc: 'AWS・Azure上の冗長化されたセキュアなデータセンターでサービスを運用。',
+        description: 'AWS・Azure上の冗長化されたセキュアなデータセンターでサービスを運用。',
         icon: 'server',
-        iconColor: '',
+        iconColor: 'orange',
       },
       {
         title: 'アクセス制御',
-        desc: 'きめ細かい権限管理とロールベースアクセス制御（RBAC）を提供。',
+        description: 'きめ細かい権限管理とロールベースアクセス制御（RBAC）を提供。',
         icon: 'user-lock',
-        iconColor: '',
+        iconColor: 'blue',
       },
       {
         title: 'セキュリティ監査',
-        desc: '第三者機関による定期的なセキュリティ監査と脆弱性テストを実施。',
+        description: '第三者機関による定期的なセキュリティ監査と脆弱性テストを実施。',
         icon: 'shield-halved',
-        iconColor: '',
+        iconColor: 'pink',
       },
     ];
 
@@ -45,3 +46,4 @@ mixin security-overview
   section#security-overview.security-overview
     .container
       +sec-title('包括的なセキュリティ対策', '多層防御により、あらゆる脅威からデータを保護')
+      +info-card(items).col-3
