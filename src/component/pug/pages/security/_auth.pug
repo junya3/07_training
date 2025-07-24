@@ -1,0 +1,42 @@
+include /component/pug/ui/_sec-title
+
+mixin auth
+  -
+    const items = [
+      {
+        title: 'SOC 2 Type II',
+        description: 'セキュリティ・可用性・機密性の認証',
+        icon: 'circle-check',
+        iconColor: 'green',
+      },
+      {
+        title: 'ISO 27001',
+        description: '情報セキュリティマネジメントシステム',
+        icon: 'circle-check',
+        iconColor: 'green',
+      },
+      {
+        title: 'GDPR準拠',
+        description: 'EU一般データ保護規則への完全準拠',
+        icon: 'circle-check',
+        iconColor: 'green',
+      },
+      {
+        title: 'CCPA準拠',
+        description: 'カリフォルニア州消費者プライバシー法準拠',
+        icon: 'circle-check',
+        iconColor: 'green',
+      },
+    ];
+
+
+  section#auth.auth
+    .container
+      +sec-title('認証・コンプライアンス', '国際的なセキュリティ基準への準拠')
+      ul.auth__list.col.col-4
+        each item in items
+          li.auth__list-item
+            .auth__list-icon.icon
+              i(class=`fa-solid fa-${item.icon} ${item.iconColor}`)
+            h3.auth__title= item.title
+            p.auth__desc= item.description
