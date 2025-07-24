@@ -1,5 +1,6 @@
 extends /component/pug/layout/_layout
 include /component/pug/ui/_page-title
+include /component/pug/ui/_banner
 include /component/pug/pages/security/_security-overview
 include /component/pug/pages/security/_auth
 include /component/pug/pages/security/_safeguards
@@ -13,3 +14,4 @@ block content
   +security-overview
   +auth
   +safeguards
+  +banner('セキュリティについてもっと知りたい？', '詳細なセキュリティドキュメントをご確認いただけます', { label: 'セキュリティドキュメントを見る', href: '/', style: 'white-solid' })
