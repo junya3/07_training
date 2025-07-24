@@ -1,0 +1,28 @@
+mixin user-scores
+  -
+    const items = [
+      {
+        value: '50,000+',
+        label: 'アクティブユーザー',
+      },
+      {
+        value: '150+',
+        label: '導入企業',
+      },
+      {
+        value: '99.9%',
+        label: '稼働率',
+      },
+      {
+        value: '24/7',
+        label: 'サポート体制',
+      },
+    ]
+
+  section#user-scores.user-scores
+    .container
+      ul.user-scores__list.col.col-4
+        each item in items
+          li.user-scores__list-item
+            p.user-scores__list-val= item.value
+            p.user-scores__list-label= item.label

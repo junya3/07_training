@@ -1,0 +1,23 @@
+@use 'style/_global' as *;
+
+.user-scores {
+  &__list {
+    &-item {
+      display: grid;
+      gap: 8px;
+      text-align: center;
+    }
+    &-val {
+      @include font($font, 28, 700, 1.5);
+      color: var(--primary-color-100);
+
+      @include md() {
+        font-size: rem(36);
+      }
+    }
+    &-label {
+      @include font($font, 16, 500, 1.5);
+      color: var(--color-black-40);
+    }
+  }
+}

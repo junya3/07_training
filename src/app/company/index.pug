@@ -1,0 +1,11 @@
+extends /component/pug/layout/_layout
+include /component/pug/ui/_page-title
+include /component/pug/pages/company/_user-scores
+
+block prepend title
+  -
+    const pageTitle = '会社概要'
+
+block content
+  +page-title('チームの可能性を', '最大化', 'する', 'FlowSyncは、世界中のチームがより効率的に、より創造的に働けるよう支援することを使命としています。 私たちの情熱は、テクノロジーを通じて人々の働き方を変革することです。')
+  +user-scores
