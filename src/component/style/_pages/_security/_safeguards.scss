@@ -1,0 +1,40 @@
+@use 'style/_global' as *;
+
+.safeguards {
+  &__list {
+    width: min(100%, #{$i_content-width}px);
+    margin-inline: auto;
+  }
+  &__item {
+    display: grid;
+    gap: 16px;
+    padding: 24px;
+    border-radius: 8px;
+    background: var(--color-gray);
+  }
+
+  &__title {
+    @include font($font, 20, 700, 1.5);
+  }
+
+  &__sublist {
+    display: grid;
+    gap: 14px;
+  }
+
+  &__subitem {
+    color: var(--color-black-40);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    @include font($font, 16, 400, 1);
+    &::before {
+      content: '';
+      width: 4px;
+      height: 4px;
+      border-radius: 8px;
+      background: var(--color-black-40);
+    }
+  }
+}

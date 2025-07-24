@@ -1,0 +1,45 @@
+include /component/pug/ui/_sec-title
+
+mixin safeguards
+  -
+    const items = [
+      {
+        title: 'データ保護',
+        list: [
+          'すべてのデータは暗号化されて保存',
+          '定期的な自動バックアップ',
+          '地理的に分散したデータセンター',
+          'データ保持期間の明確な管理',
+        ],
+      },
+      {
+        title: 'アクセス管理',
+        list: [
+          '多要素認証（MFA）の強制',
+          'シングルサインオン（SSO）対応',
+          '最小権限の原則に基づくアクセス制御',
+          '全アクセスの詳細ログ記録',
+        ],
+      },
+      {
+        title: '監視・対応',
+        list: [
+          '24時間365日のセキュリティ監視',
+          '異常検知システムによる自動アラート',
+          'インシデント対応チームの常時待機',
+          '定期的な脆弱性スキャン',
+        ],
+      },
+    ];
+
+
+  section#safeguards.safeguards
+    .safeguards__container.container
+      +sec-title('セキュリティ実践')
+      ul.safeguards__list.col
+        each item in items
+          li.safeguards__item
+            h3.safeguards__title= item.title
+            ul.safeguards__sublist
+              each i in item.list
+                li.safeguards__subitem= i

@@ -2,6 +2,7 @@ extends /component/pug/layout/_layout
 include /component/pug/ui/_page-title
 include /component/pug/pages/security/_security-overview
 include /component/pug/pages/security/_auth
+include /component/pug/pages/security/_safeguards
 
 block prepend title
   -
@@ -11,3 +12,4 @@ block content
   +page-title('企業レベルの', 'セキュリティ', '', 'FlowSyncは、世界最高水準のセキュリティ対策により、 お客様の大切なデータを完全に保護します。', 'shield')
   +security-overview
   +auth
+  +safeguards
