@@ -1,0 +1,53 @@
+include /component/pug/ui/_sec-title
+
+mixin leadership-team
+  -
+    const extension = '.png' 
+
+  -
+    const members = [
+      {
+        photo: 'person01',
+        name: '田中 健太',
+        job: 'CEO & 共同創設者',
+        comment: '元Google、Microsoft出身。15年以上のプロダクト開発経験を持つ。',
+      },
+      {
+        photo: 'person02',
+        name: '佐藤 美咲',
+        job: 'CTO & 共同創設者',
+        comment: 'スタンフォード大学CS修士。大規模システム設計のエキスパート。',
+      },
+      {
+        photo: 'person03',
+        name: '山田 雄介',
+        job: 'VP of Engineering',
+        comment: '元Amazon、Uber出身。分散システムとAI技術のスペシャリスト。',
+      },
+      {
+        photo: 'person04',
+        name: '鈴木 麻衣',
+        job: 'VP of Design',
+        comment: 'Apple、Airbnb出身。ユーザー体験デザインのリーダー。',
+      },
+    ];
+
+
+  section#team.team
+    .container
+      +sec-title('リーダーシップチーム', '世界トップクラスの企業出身者が集結したエキスパートチーム')
+      ul.team__list.col.col-4
+        each member in members
+          li.team__list-item
+            if member.photo
+              img.team__person-photo(
+                src=`/assets/image/company/${member.photo}${extension}`,
+                alt=`${member.name}さんの写真`
+              )
+            else
+              .team__list-icon.icon: i(class='fa-solid fa-face-smile')
+            .team__list-inner
+              hgroup.team__person
+                h3.team__person-name= member.name
+                p.team__person-job= member.job
+              p.team__person-comment= member.comment
