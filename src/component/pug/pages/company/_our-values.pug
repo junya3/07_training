@@ -1,0 +1,44 @@
+include /component/pug/ui/_sec-title
+
+mixin our-values
+  -
+    const items = [
+      {
+        icon: 'users',
+        iconColor: 'blue',
+        title: 'チームワーク',
+        text: '私たちは、優れたチームワークが最高の製品を生み出すと信じています。',
+      },
+      {
+        icon: 'lightbulb',
+        iconColor: 'yellow',
+        title: 'イノベーション',
+        text: '常に新しいアイデアを追求し、業界をリードする製品を開発します。',
+      },
+      {
+        icon: 'user-check',
+        iconColor: 'pink',
+        title: '顧客第一',
+        text: 'お客様の成功が私たちの成功。常にお客様の視点で考えます。',
+      },
+      {
+        icon: 'gem',
+        iconColor: 'green',
+        title: '品質へのこだわり',
+        text: '妥協のない品質で、信頼できる製品をお届けします。',
+      },
+    ];
+
+
+
+  section#our-values.our-values
+    .container
+      +sec-title('私たちの価値観', 'FlowSyncの文化と行動指針となる4つの核となる価値観')
+      ul.our-values__list.col.col-2
+        each item in items
+          li.our-values__list-item
+            if item.icon
+              .our-values__list-icon.icon: i(class=`fa-solid fa-${item.icon} ${item.iconColor}`)
+            .our-values__list-inner
+              h3.our-values__list-title= item.title
+              p.our-values__list-text= item.text
