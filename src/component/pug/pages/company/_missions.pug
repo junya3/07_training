@@ -1,0 +1,31 @@
+mixin mission
+  -
+    const items = [
+      {
+        icon: 'bullseye',
+        iconColor: 'blue',
+        title: 'ミッション',
+        text: '世界中のチームが地理的な制約を超えて、シームレスに協力し、革新的なアイデアを実現できる環境を提供すること。',
+        subText: '私たちは、テクノロジーの力でコミュニケーションの壁を取り除き、すべての人が自分の能力を最大限に発揮できる世界を目指しています。',
+      },
+      {
+        icon: 'eye',
+        iconColor: 'purple',
+        title: 'ビジョン',
+        text: '2030年までに、世界で最も愛されるコラボレーションプラットフォームになること。',
+        subText: '私たちのビジョンは、単なるツールを提供することではありません。人々の働き方を根本的に変革し、より創造的で充実した仕事体験をすべての人に届けることです。',
+      },
+    ];
+
+
+  section#mission.mission
+    .container
+      ul.mission__list.col.col-2
+        each item in items
+          li.mission__list-item
+            if item.icon
+              .mission__list-icon.icon
+                i(class=`fa-solid fa-${item.icon} ${item.iconColor}`)
+            h2.mission__list-title= item.title
+            p.mission__list-text= item.text
+            p.mission__list-subtext= item.subText

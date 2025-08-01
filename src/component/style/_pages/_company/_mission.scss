@@ -1,0 +1,43 @@
+@use 'style/_global' as *;
+
+.mission {
+  .col {
+    gap: 60px;
+  }
+
+  &__list {
+    &-item {
+      display: grid;
+      gap: 16px;
+    }
+    &-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: rem(24);
+
+      &:has(.blue) {
+        background: var(--color-blue-40);
+      }
+      &:has(.purple) {
+        background: var(--color-purple-40);
+      }
+    }
+    &-title {
+      @include font($font, 30, 700, 1.25);
+    }
+    &-text,
+    &-subTextr {
+      color: var(--color-black-40);
+    }
+    &-text {
+      @include font($font, 18, 400, 1.5);
+    }
+    &-subText {
+      @include font($font, 16, 400, 1.5);
+    }
+  }
+}

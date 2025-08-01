@@ -44,6 +44,7 @@ $base-font-size: 16;
   --color-dark-blue-10: hsl(from var(--color-blue) h s calc(l - 10));
 
   --color-purple: var(--primary-color-200);
+  --color-purple-40: hsl(from var(--color-purple) h s calc(l + 40));
 
   --color-green: #16a34a;
   --color-yellow: #facc15;
