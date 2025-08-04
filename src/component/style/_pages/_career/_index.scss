@@ -1,5 +1,7 @@
 @use 'style/_global' as *;
 
+@forward 'our-culture';
+
 .button.career-button {
   width: fit-content;
   margin-inline: auto;

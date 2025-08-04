@@ -1,0 +1,36 @@
+include /component/pug/ui/_sec-title
+
+mixin our-culture
+  -
+    const items = [
+      {
+        number: 1,
+        title: 'オープンネス',
+        text: '透明性を重視し、情報共有を積極的に行います',
+      },
+      {
+        number: 2,
+        title: 'イノベーション',
+        text: '常に新しいアイデアを歓迎し、挑戦を奨励します',
+      },
+      {
+        number: 3,
+        title: 'チームワーク',
+        text: '多様性を尊重し、協力して目標を達成します',
+      },
+      {
+        number: 4,
+        title: '顧客第一',
+        text: 'お客様の成功が私たちの成功だと考えます',
+      },
+    ]
+
+  section#our-culture.our-culture
+    .container
+      +sec-title('私たちの文化', 'FlowSyncの価値観とチーム文化')
+      ul.our-culture__list.col.col-4
+        each item in items
+          li.our-culture__list-item
+            p.our-culture__list-num= item.number
+            p.our-culture__list-title= item.title
+            p.our-culture__list-text= item.text
