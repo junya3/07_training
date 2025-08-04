@@ -1,0 +1,33 @@
+include /component/pug/ui/_sec-title
+
+mixin company-award
+  -
+    const items = [
+      {
+        title: 'Best Collaboration Tool 2024',
+        text: 'TechCrunch Awards',
+        year: 2024,
+      },
+      {
+        title: 'Innovation Award',
+        text: 'Japan IT Awards',
+        year: 2023,
+      },
+      {
+        title: 'Customer Choice Award',
+        text: 'G2 Reviews',
+        year: 2023,
+      },
+    ];
+
+
+  section#award.award
+    .container
+      +sec-title('受賞歴', '業界から認められた実績')
+      ul.award__list.col.col-3
+        each item in items
+          li.award__list-item
+            .icon.award__list-icon: i(class='fa-solid fa-award yellow')
+            p.award__list-name= item.title
+            p.award__list-text= item.text
+            p.award__list-year= item.year
