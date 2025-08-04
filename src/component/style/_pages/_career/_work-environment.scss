@@ -1,0 +1,39 @@
+@use 'style/_global' as *;
+
+.work-environment {
+  .list {
+    &.col {
+      gap: 24px;
+    }
+    &__item {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      gap: 16px;
+      padding: 32px;
+      border-radius: 8px;
+      background: var(--color-white);
+      border: 1px solid var(--color-gray-5);
+
+      &-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 8px;
+        background: var(--color-gray);
+        text-align: center;
+        align-content: center;
+        @include font($font, 24, 700, 1.5);
+      }
+      &-textBox {
+        display: grid;
+        gap: 8px;
+      }
+      &-title {
+        @include font($font, 20, 700, 1.25);
+      }
+      &-text {
+        @include font($font, 16, 400, 1.5);
+        color: var(--color-black-40);
+      }
+    }
+  }
+}

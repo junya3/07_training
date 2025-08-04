@@ -1,0 +1,41 @@
+include /component/pug/ui/_sec-title
+
+mixin work-environment
+  -
+    const items = [
+      {
+        icon: 'hand-holding-heart',
+        iconColor: 'pink',
+        title: '充実した福利厚生',
+        text: '健康保険、退職金制度、有給休暇など充実したサポート',
+      },
+      {
+        icon: 'lightbulb',
+        iconColor: 'yellow',
+        title: '学習・成長支援',
+        text: '書籍購入費、研修費、カンファレンス参加費を全額支給',
+      },
+      {
+        icon: 'users',
+        iconColor: 'blue',
+        title: '多様なチーム',
+        text: '世界15カ国出身のメンバーが在籍するグローバルチーム',
+      },
+      {
+        icon: 'clock',
+        iconColor: 'green',
+        title: '裁量労働制',
+        text: '成果重視の働き方で、ワークライフバランスを実現',
+      },
+    ]
+
+  section#work-environment.work-environment
+    .container
+      +sec-title('働きやすい環境', 'メンバーが最高のパフォーマンスを発揮できるサポート')
+      ul.list.col.col-2
+        each item in items
+          li.list__item
+            .icon.list__item-icon: i(class=`fa-solid fa-${item.icon} ${item.iconColor}`)
+            .list__item-textBox
+              h3.list__item-title= item.title
+              p.list__item-text= item.text
