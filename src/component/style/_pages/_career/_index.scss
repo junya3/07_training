@@ -1,0 +1,8 @@
+@use 'style/_global' as *;
+
+.button.career-button {
+  width: fit-content;
+  margin-inline: auto;
+  padding: 20px 60px;
+  @include font($font, 18, 700, 1.5);
+}

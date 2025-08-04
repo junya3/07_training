@@ -1,0 +1,10 @@
+extends /component/pug/layout/_layout
+include /component/pug/ui/_page-title
+include /component/pug/ui/_button
+
+block prepend title
+  - const pageTitle = '求人情報';
+
+block content
+  +page-title('一緒に', '未来', 'を創りませんか？', 'FlowSyncで働くということは、世界中のチームの働き方を変革する 革新的なプロダクトの一部になることです。')
+    +button('募集職種を見る', '/career/#job').career-button
