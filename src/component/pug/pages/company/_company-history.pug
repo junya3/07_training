@@ -1,0 +1,45 @@
+include /component/pug/ui/_sec-title
+
+mixin company-history
+  -
+    const items = [
+      {
+        year: 2020,
+        title: 'FlowSync設立',
+        text: 'リモートワークの課題を解決するため、東京で創業',
+      },
+      {
+        year: 2021,
+        title: 'シリーズA調達',
+        text: '1,000万ドルの資金調達を完了、チーム拡大開始',
+      },
+      {
+        year: 2022,
+        title: 'グローバル展開',
+        text: 'アジア太平洋地域での事業展開を開始',
+      },
+      {
+        year: 2023,
+        title: 'AI機能リリース',
+        text: '機械学習を活用したスマート機能を導入',
+      },
+      {
+        year: 2024,
+        title: 'エンタープライズ強化',
+        text: '大企業向け機能とセキュリティを大幅に強化',
+      },
+    ];
+
+  section#company-history.company-history
+    .container
+      +sec-title('私たちの歩み', 'FlowSyncの成長の軌跡')
+      ul.log
+        each item in items
+          li.log__item
+            .log__deco
+              .log__deco-circle
+              .log__deco-line
+            .log__item-wrap
+              p.log__year= item.year
+              p.log__title= item.title
+              p.log__text= item.text

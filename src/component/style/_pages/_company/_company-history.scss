@@ -1,0 +1,60 @@
+@use 'style/_global' as *;
+
+.log {
+  width: $i_content-width + px;
+  margin-inline: auto;
+  &__deco {
+    display: grid;
+    grid-template-rows: max-content 1fr;
+    &-circle {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: var(--color-white);
+      border: 10px solid var(--color-blue);
+      position: relative;
+      z-index: 99;
+    }
+    &-line {
+      width: 2px;
+      height: auto;
+      background: var(--color-blue-40);
+      margin-inline: auto;
+    }
+  }
+  &__year {
+    width: fit-content;
+    height: fit-content;
+    padding: 2px 16px;
+    border-radius: calc(1px / 0);
+    background: var(--color-blue-40);
+    color: var(--color-blue);
+
+    @include font($font, 14, 700, 1.5);
+  }
+  &__title {
+    @include font($font, 18, 700, 1.5);
+  }
+  &__text {
+    @include font($font, 16, 400, 1.5);
+    color: var(--color-black-40);
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 16px;
+
+    &:not(:last-of-type) &-wrap {
+      margin-bottom: 30px;
+    }
+
+    &-wrap {
+      display: grid;
+      gap: 4px;
+      padding: 24px;
+      background-color: var(--color-gray);
+      border-radius: 8px;
+    }
+  }
+}
