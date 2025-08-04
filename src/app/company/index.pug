@@ -6,6 +6,7 @@ include /component/pug/pages/company/_our-values
 include /component/pug/pages/company/_leadership-team
 include /component/pug/pages/company/_company-history
 include /component/pug/pages/company/_company-award
+include /component/pug/ui/_banner
 
 block prepend title
   -
@@ -19,3 +20,4 @@ block content
   +leadership-team
   +company-history
   +company-award
+  +banner('一緒に未来を創りませんか？', 'FlowSyncチームに参加して、世界中のチームの働き方を変革しましょう', { label: '採用情報を見る', href: '/recruit', style: 'white-solid' }, { label: 'パートナーになる', href: '/', style: 'white-outline' })
