@@ -1,7 +1,7 @@
 @use 'style/_global' as *;
 
 .log {
-  width: $i_content-width + px;
+  max-width: $i_content-width + px;
   margin-inline: auto;
   &__deco {
     display: grid;
