@@ -1,0 +1,60 @@
+@use 'style/_global' as *;
+
+.job-list {
+  .item {
+    display: grid;
+    gap: 16px;
+    align-items: center;
+
+    background-color: var(--color-gray);
+    border-radius: 8px;
+    padding: 24px;
+
+    @include md() {
+      grid-template-columns: 1fr max-content;
+    }
+    &-detail {
+      display: grid;
+      gap: 8px;
+    }
+
+    &-heading {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      @include md() {
+        flex-direction: row;
+      }
+
+      &__title {
+        @include font($font, 20, 700, 1.25);
+      }
+      .tag {
+        border-radius: calc(1px / 0);
+        @include font($font, 14, 400, 1.5);
+        padding: 0 8px;
+        height: auto;
+        align-content: center;
+      }
+    }
+    &-desc {
+      @include font($font, 16, 400, 1.5);
+      color: var(--color-black-40);
+    }
+    &-term {
+      display: flex;
+      gap: 8px;
+      @include font($font, 14, 400, 1.5);
+      color: var(--color-black-40);
+
+      .icon {
+        margin-right: 8px;
+      }
+    }
+
+    .button {
+      height: fit-content;
+    }
+  }
+}

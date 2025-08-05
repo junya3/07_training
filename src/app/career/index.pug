@@ -3,6 +3,7 @@ include /component/pug/ui/_page-title
 include /component/pug/ui/_button
 include /component/pug/pages/career/_our-culture
 include /component/pug/pages/career/_work-environment
+include /component/pug/pages/career/_jobs
 
 block prepend title
   - const pageTitle = '求人情報';
@@ -12,3 +13,4 @@ block content
     +button('募集職種を見る', '/career/#job').career-button
   +our-culture
   +work-environment
+  +jobs

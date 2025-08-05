@@ -1,0 +1,70 @@
+include /component/pug/ui/_sec-title
+include /component/pug/ui/_button
+include /component/pug/ui/_tag
+
+mixin jobs
+  -
+    const items = [
+      {
+        title: 'シニアフロントエンドエンジニア',
+        category: 'エンジニアリング',
+        description: 'React/TypeScriptを使用したWebアプリケーション開発をリードしていただきます。',
+        location: '東京 / リモート',
+        type: '正社員',
+      },
+      {
+        title: 'プロダクトマネージャー',
+        category: 'プロダクト',
+        description: 'FlowSyncの機能企画・開発戦略を担当し、チームを牽引していただきます。',
+        location: '東京',
+        type: '正社員',
+      },
+      {
+        title: 'UX/UIデザイナー',
+        category: 'デザイン',
+        description: 'ユーザー体験の向上を目指し、直感的なインターフェースをデザインしていただきます。',
+        location: '東京 / リモート',
+        type: '正社員',
+      },
+      {
+        title: 'カスタマーサクセス',
+        category: 'セールス',
+        description: 'お客様の成功をサポートし、長期的な関係構築を担当していただきます。',
+        location: '東京',
+        type: '正社員',
+      },
+      {
+        title: 'マーケティングマネージャー',
+        category: 'マーケティング',
+        description: 'デジタルマーケティング戦略の企画・実行をお任せします。',
+        location: '東京 / リモート',
+        type: '正社員',
+      },
+      {
+        title: 'セキュリティエンジニア',
+        category: 'エンジニアリング',
+        description: 'プラットフォームのセキュリティ強化と監視体制の構築を担当していただきます。',
+        location: '東京 / リモート',
+        type: '正社員',
+      },
+    ]
+
+  section#job.job
+    .container
+      +sec-title('募集職種', 'あなたのスキルを活かせるポジションを見つけてください')
+      ul.job-list.col
+        each item in items
+          li.item
+            .item-detail
+              hgroup.item-heading
+                h3.item-heading__title= item.title
+                +tag(item.category)
+              p.item-desc= item.description
+              .item-term
+                p.item-term__location
+                  span.icon: i(class='fa-solid fa-location-dot')
+                  | #{ item.location }
+                p.item-term__type
+                  span.icon: i(class='fa-solid fa-clock')
+                  | #{ item.type }
+            +button('詳細を見る →', '/')
