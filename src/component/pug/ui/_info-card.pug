@@ -1,3 +1,5 @@
+include /component/pug/ui/_link
+
 mixin info-card(items = [], position = '', color = '')
   ul.col&attributes(attributes)
     each item in items
@@ -7,3 +9,5 @@ mixin info-card(items = [], position = '', color = '')
             i(class=`fa-solid fa-${item.icon} ${item.iconColor}`)
         h3.info-card__title= item.title
         p.info-card__description= item.description
+        if item.number
+          +link(`${item.number}件の記事`, '/')

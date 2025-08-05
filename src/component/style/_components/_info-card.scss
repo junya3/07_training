@@ -17,6 +17,12 @@
 
   &:has(.info-card__icon) {
     grid-row: span 3;
+    &:has(.link) {
+      grid-row: span 4;
+    }
+  }
+  .link {
+    margin-left: 0;
   }
   &.white {
     background: var(--color-white);

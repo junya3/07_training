@@ -1,0 +1,41 @@
+include /component/pug/ui/_sec-title
+include /component/pug/ui/_info-card
+
+mixin faq-category
+  -
+    const items = [
+      {
+        icon: 'book-open', // 書籍アイコン
+        iconColor: 'blue',
+        title: 'はじめに',
+        description: 'FlowSyncの基本的な使い方',
+        number: 12
+      },
+      {
+        icon: 'users', // コラボレーション向きアイコン
+        iconColor: 'green',
+        title: 'コラボレーション',
+        description: 'チームでの効果的な使い方',
+        number: 8
+      },
+      {
+        icon: 'project-diagram', // プロジェクト管理に適したアイコン
+        iconColor: 'purple',
+        title: 'プロジェクト管理',
+        description: 'プロジェクトの作成と管理',
+        number: 15
+      },
+      {
+        icon: 'cog', // 設定アイコン
+        iconColor: 'orange',
+        title: '設定・管理',
+        description: 'アカウントとチーム設定',
+        number: 10
+      }
+    ]
+
+
+  section#faq-category.faq-category
+    .container
+      +sec-title('カテゴリから探す')
+      +info-card(items, '', 'gray').col.col-4
