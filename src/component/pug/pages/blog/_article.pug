@@ -1,0 +1,20 @@
+include /component/pug/ui/_sec-title
+
+mixin article(items)
+  section.article
+    .container
+      +sec-title('すべての記事')
+      ul.article__list.col.col-3
+        each item in items
+          li.article__list-item.item: a.link(href=item.href)
+            img.item__image(src=`/assets/image/article/${item.image}.jpg`, alt='')
+            .item-wrap
+              p.item__tag
+                span.icon: i.fa-solid.fa-tag
+                | #{ item.tag }
+              p.item__title= item.title
+              p.item__desc= item.desc
+              ul.item__details
+                li= item.author
+                li= item.date
+                li #{ item.minite }分

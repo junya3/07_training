@@ -1,6 +1,7 @@
 extends /component/pug/layout/_layout
 include /component/pug/ui/_page-title
 include /component/pug/pages/blog/_feature
+include /component/pug/pages/blog/_article
 
 block prepend title
   - pageTitle = 'ブログ一覧';
@@ -85,3 +86,4 @@ block content
 
   +page-title('FlowSync', 'ブログ', '', 'プロダクトの最新情報、働き方のヒント、業界トレンドなど、 チームの生産性向上に役立つ情報をお届けします。')
   +feature(feature)
+  +article(others)
