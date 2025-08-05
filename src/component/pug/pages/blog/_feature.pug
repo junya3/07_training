@@ -1,0 +1,24 @@
+include /component/pug/ui/_button
+
+mixin feature(item)
+  section#blog-feature.blog-feature
+    .container
+      .item.col.col-2
+        .item-wrap
+          ul.item__tags
+            li.item-tag 注目記事
+            li.item-tag= item.tag
+
+          h2.item-title= item.title
+          p.item-desc= item.desc
+          ul.item__details
+            li.author
+              .icon: i(class='fa-solid fa-user')
+              | #{ item.author }
+            li.date
+              .icon: i(class='fa-solid fa-calendar')
+              | #{ item.date }
+            li.minite #{ item.minite }分で読める
+          +button('記事を読む →', item.href, 'white-outline')
+
+        img.item-image(src=`/assets/image/article/${item.image}.jpg`, alt='')

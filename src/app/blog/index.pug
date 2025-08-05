@@ -1,0 +1,87 @@
+extends /component/pug/layout/_layout
+include /component/pug/ui/_page-title
+include /component/pug/pages/blog/_feature
+
+block prepend title
+  - pageTitle = 'ブログ一覧';
+
+block content
+  -
+    const article = [
+      {
+        title: 'FlowSync 3.0リリース：AI搭載の新機能で生産性が劇的向上',
+        desc: '待望のFlowSync 3.0がついにリリース！AI搭載のスマート機能により、チームの生産性が平均40%向上することが実証されました。',
+        tag: ['プロダクト'],
+        author: '田中 健太',
+        date: '2024年1月15日',
+        minite: 5,
+        image: 'article01',
+        href: ''
+      },
+      {
+        title: 'リモートワークを成功させる5つの秘訣',
+        desc: 'リモートワークでチームの生産性を最大化するための実践的なアドバイスをご紹介します。',
+        tag: ['働き方'],
+        author: '佐藤 美咲',
+        date: '2024年1月10日',
+        minite: 3,
+        image: 'article02',
+        href: ''
+      },
+      {
+        title: 'プロジェクト管理の新常識：アジャイル手法の活用',
+        desc: '現代のプロジェクト管理に欠かせないアジャイル手法について、実例を交えて解説します。',
+        tag: ['プロジェクト管理'],
+        author: '山田 雄介',
+        date: '2024年1月8日',
+        minite: 4,
+        image: 'article03',
+        href: ''
+      },
+      {
+        title: 'セキュリティ強化アップデート：新しい認証機能',
+        desc: '企業のセキュリティ要件に応える新しい多要素認証機能をリリースしました。',
+        tag: ['セキュリティ'],
+        author: '鈴木 麻衣',
+        date: '2024年1月5日',
+        minite: 3,
+        image: 'article04',
+        href: ''
+      },
+      {
+        title: '顧客事例：スタートアップが3ヶ月で生産性2倍を達成',
+        desc: 'FlowSyncを導入したスタートアップ企業の成功事例をご紹介します。',
+        tag: ['事例'],
+        author: '田中 健太',
+        date: '2024年1月3日',
+        minite: 6,
+        image: 'article05',
+        href: ''
+      },
+      {
+        title: '2024年のワークトレンド予測',
+        desc: '来年のワークスタイルはどう変わる？専門家による予測と対策をお届けします。',
+        tag: ['トレンド'],
+        author: '佐藤 美咲',
+        date: '2023年12月28日',
+        minite: 5,
+        image: 'article06',
+        href: ''
+      },
+      {
+        title: 'API活用事例：カスタム統合で業務効率化',
+        desc: 'FlowSync APIを活用して独自のワークフローを構築した企業の事例をご紹介。',
+        tag: ['技術'],
+        author: '山田 雄介',
+        date: '2023年12月25日',
+        minite: 4,
+        image: 'article07',
+        href: ''
+      }
+    ]
+
+    const feature = article[0]
+    const others = article.slice(1)
+
+  +page-title('FlowSync', 'ブログ', '', 'プロダクトの最新情報、働き方のヒント、業界トレンドなど、 チームの生産性向上に役立つ情報をお届けします。')
+  +feature(feature)
