@@ -1,0 +1,46 @@
+include /component/pug/ui/_sec-title
+
+mixin faq-article
+  -
+    const items = [
+      {
+        title: 'FlowSyncの始め方：初回セットアップガイド',
+        href: '/'
+      },
+      {
+        title: 'チームメンバーを招待する方法',
+        href: '/'
+      },
+      {
+        title: 'プロジェクトの作成と設定',
+        href: '/'
+      },
+      {
+        title: 'タスクの作成と割り当て',
+        href: '/'
+      },
+      {
+        title: '通知設定をカスタマイズする',
+        href: '/'
+      },
+      {
+        title: 'ファイル共有の使い方',
+        href: '/'
+      },
+      {
+        title: 'レポート機能の活用方法',
+        href: '/'
+      },
+      {
+        title: 'モバイルアプリの使い方',
+        href: '/'
+      }
+    ];
+
+  section.faq-article
+    .container
+      +sec-title('人気の記事')
+      ul.list.col
+        each item in items
+          li.list__item: a.list__wrap(href=item.href)= item.title
+            span.icon: i(class='fa-solid fa-angle-right')

@@ -1,0 +1,35 @@
+@use 'style/_global' as *;
+
+.faq-article {
+  .list {
+    gap: 0;
+    width: min(100%, #{$i_content-width}px);
+    margin-inline: auto;
+  }
+  .list {
+    background: var(--color-white);
+    border-radius: 16px;
+    overflow: hidden;
+    &__wrap {
+      display: flex;
+      gap: 24px;
+      padding: 24px 32px;
+      justify-content: space-between;
+    }
+    &__item {
+      & + .list__item {
+        border-top: 1px solid var(--color-black-90);
+      }
+      .icon {
+        translate: 0 0;
+        transition: translate $hover-sec;
+      }
+      @include hover() {
+        background: var(--color-black-90);
+        .icon {
+          translate: 4px 0;
+        }
+      }
+    }
+  }
+}

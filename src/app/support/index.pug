@@ -1,6 +1,7 @@
 extends /component/pug/layout/_layout
 include /component/pug/ui/_page-title
 include /component/pug/pages/support/_faq-category
+include /component/pug/pages/support/_faq-article
 
 block prepend title
   - const pageTitle = 'サポート';
@@ -8,3 +9,4 @@ block prepend title
 block content
   +page-title('ヘルプ', 'センター', '', 'FlowSyncの使い方や疑問点を解決するためのサポート情報')
   +faq-category
+  +faq-article
