@@ -2,6 +2,8 @@ extends /component/pug/layout/_layout
 include /component/pug/ui/_page-title
 include /component/pug/pages/support/_faq-category
 include /component/pug/pages/support/_faq-article
+include /component/pug/ui/_faq
+include /component/pug/ui/_banner
 
 block prepend title
   - const pageTitle = 'サポート';
@@ -10,3 +12,5 @@ block content
   +page-title('ヘルプ', 'センター', '', 'FlowSyncの使い方や疑問点を解決するためのサポート情報')
   +faq-category
   +faq-article
+  +faq
+  +banner('解決しない問題がありますか？', 'サポートチームが直接お手伝いします', { label: 'サポートに連絡', href: '/', style: 'white-solid' }, { label: 'コミュニティで質問する', href: '/', style: 'white-outline' })
