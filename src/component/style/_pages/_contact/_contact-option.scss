@@ -1,0 +1,32 @@
+@use 'style/_global' as *;
+
+.contact-option {
+  .list {
+    &__item {
+      padding: 16px;
+      background: var(--color-gray);
+      text-align: center;
+      gap: 8px;
+    }
+    .icon {
+      width: 50px;
+      height: 50px;
+      align-content: center;
+      margin-inline: auto;
+
+      background: var(--color-white);
+      border-radius: 8px;
+      font-size: rem(20);
+    }
+    &__type {
+      @include font($font, 18, 600, 1.5);
+    }
+    &__value {
+      @include font($font, 16, 500, 1.5);
+    }
+    &__desc {
+      @include font($font, 14, 400, 1.5);
+      color: var(--color-black-40);
+    }
+  }
+}

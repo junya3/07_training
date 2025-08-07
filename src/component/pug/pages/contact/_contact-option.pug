@@ -1,0 +1,46 @@
+include /component/pug/ui/_sec-title
+
+mixin contact-option
+  -
+    const items = [
+      {
+        type: 'メール',
+        value: 'hello@flowsync.jp',
+        description: '24時間以内に返信',
+        icon: 'envelope',
+        iconColor: 'blue'
+      },
+      {
+        type: '電話',
+        value: '03-1234-5678',
+        description: '平日 9:00-18:00',
+        icon: 'phone',
+        iconColor: 'green'
+      },
+      {
+        type: 'オフィス',
+        value: '東京都渋谷区神南1-2-3',
+        description: 'FlowSyncビル 10F',
+        icon: 'building',
+        iconColor: 'purple'
+      },
+      {
+        type: 'チャット',
+        value: 'リアルタイムサポート',
+        description: '平日 9:00-18:00',
+        icon: 'comments',
+        iconColor: 'orange'
+      }
+    ];
+
+  section#contact-option.contact-option
+    .container
+      +sec-title('お問い合わせ方法', 'お客様に最適な方法でお問い合わせください')
+
+      ul.list.col.col-4
+        each item in items
+          li.list__item.col
+            .icon: i(class=`fa-solid fa-${item.icon} ${item.iconColor}`)
+            h3.list__type= item.type
+            p.list__value= item.value
+            p.list__desc= item.description
