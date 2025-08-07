@@ -1,0 +1,104 @@
+mixin form
+  -
+    const items = [
+      {
+        name: 'name',
+        label: 'お名前',
+        type: 'text',
+        placeholder: '例）山田 太郎',
+        required: true
+      },
+      {
+        name: 'email',
+        label: 'メールアドレス',
+        type: 'email',
+        placeholder: '例）yamada@example.com',
+        required: true
+      },
+      {
+        name: 'company',
+        label: '会社名',
+        type: 'text',
+        placeholder: '例）株式会社サンプル',
+        required: false
+      },
+      {
+        name: 'phone',
+        label: '電話番号',
+        type: 'tel',
+        placeholder: '例）03-1234-5678',
+        required: false
+      }
+    ];
+
+    const select = [
+      {
+        name: '----- 選択してください -----',
+        value: ''
+      },
+      {
+        name: 'デモのご依頼',
+        value: 'demo'
+      },
+      {
+        name: '料金について',
+        value: 'pricing'
+      },
+      {
+        name: '技術サポート',
+        value: 'support'
+      },
+      {
+        name: 'パートナーシップ',
+        value: 'partnership'
+      },
+      {
+        name: 'その他',
+        value: 'other'
+      }
+    ];
+
+
+
+  form.form(action='/', method='post')
+    h2.form-title お問い合わせフォーム
+    .form__grid-wrap
+      each item in items
+        .form__item
+          if item.required
+            label.form__label.form__label--required(for=item.name)= item.label
+            input.form__input(
+              type=item.type,
+              id=item.name,
+              name=item.name,
+              placeholder=item.placeholder,
+              required
+            )
+          else
+            label.form__label(for=item.name)= item.label
+            input.form__input(
+              type=item.type,
+              id=item.name,
+              name=item.name,
+              placeholder=item.placeholder
+            )
+
+    .form__item
+      label.form__label.form__label--required(for='type') お問い合わせ種別
+      .select-wrap
+        select#type.form__input.select(name='type', required)
+          each item in select
+            option.option(value=item.value)= item.name
+
+    .form__item
+      label.form__label.form__label--required(for='message') メッセージ
+      textarea#message.form__input(
+        name='message',
+        rows='5',
+        placeholder='お問い合わせ内容をご記入ください',
+        required
+      )
+
+    button.button.button--solid(type='submit')
+      i.icon(class='fa-solid fa-paper-plane')
+      | 送信する

@@ -1,6 +1,7 @@
 extends /component/pug/layout/_layout
 include /component/pug/ui/_page-title
 include /component/pug/pages/contact/_contact-option
+include /component/pug/pages/contact/_contact-forms
 
 block prepend title
   - const pageTitle = 'お問い合わせ';
@@ -8,3 +9,4 @@ block prepend title
 block content
   +page-title('お気軽に', 'お問い合わせ', 'ください', 'FlowSyncについてのご質問、デモのご依頼、導入のご相談など、 お気軽にお問い合わせください。専門スタッフが丁寧にサポートいたします。')
   +contact-option
+  +contact-forms
