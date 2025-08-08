@@ -1,10 +1,34 @@
 extends /component/pug/layout/_layout
 include /component/pug/ui/_page-title
 include /component/pug/ui/_button
+include /component/pug/ui/_scores
 
 block prepend title
   - const pageTitle = 'コミュニティ';
 
 block content
+  -
+    const items = [
+      {
+        label: 'アクティブメンバー',
+        value: '15,000+'
+      },
+      {
+        label: '解決済み質問',
+        value: '2,500+'
+      },
+      {
+        label: 'エキスパート',
+        value: '50+'
+      },
+      {
+        label: '平均回答時間',
+        value: '24時間'
+      }
+    ];
+
+
   +page-title('FlowSync', 'コミュニティ', '', '世界中のFlowSyncユーザーと繋がり、知識を共有し、 一緒に成長していきましょう。')
     +button('コミュニティに参加', '/community', 'solid').community__button
+
+  +scores(items)
