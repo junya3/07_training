@@ -6,14 +6,15 @@
   border-radius: 16px;
   box-shadow: var(--box-shadow);
 
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 16px;
 
   &-title {
     @include font($font, 24, 700, 1.5);
   }
 
-  &__grid-wrap {
+  &__wrap {
     display: grid;
     grid-template-columns: 1fr;
     gap: 16px;
@@ -53,6 +54,7 @@
     }
     &#message {
       resize: vertical;
+      margin-bottom: auto;
     }
   }
   .select-wrap {
@@ -73,5 +75,8 @@
   }
   .icon {
     margin-right: 1em;
+  }
+  .button {
+    margin-top: auto;
   }
 }

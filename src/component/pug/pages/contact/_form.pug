@@ -62,7 +62,7 @@ mixin form
 
   form.form(action='/', method='post')
     h2.form-title お問い合わせフォーム
-    .form__grid-wrap
+    .form__wrap
       each item in items
         .form__item
           if item.required
@@ -100,5 +100,5 @@ mixin form
       )
 
     button.button.button--solid(type='submit')
-      i.icon(class='fa-solid fa-paper-plane')
+      i.icon.fa-solid.fa-paper-plane
       | 送信する

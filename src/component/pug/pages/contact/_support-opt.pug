@@ -1,0 +1,52 @@
+include /component/pug/ui/_link
+include /component/pug/ui/_button
+
+mixin support-opt
+  -
+    const items = [
+      {
+        icon: 'handshake',
+        iconColor: 'blue',
+        title: '営業チーム',
+        desc: 'プランの相談や導入支援について',
+        href: '/',
+        label: '営業に相談 →'
+      },
+      {
+        icon: 'life-ring',
+        iconColor: 'green',
+        title: '技術サポート',
+        desc: '製品の使い方や技術的な質問について',
+        href: '/',
+        label: 'サポートに連絡 →'
+      },
+      {
+        icon: 'calendar-check',
+        iconColor: 'purple',
+        title: 'デモ予約',
+        desc: '製品デモンストレーションの予約',
+        href: '/',
+        label: 'デモを予約 →'
+      }
+    ];
+
+
+
+  section.support-opt
+    hgroup.hgroup
+      h2.title サポートオプション
+      p.sub-title お客様のニーズに合わせて、最適なサポートをご提供いたします。
+
+    ul.support-opt__card
+      each item in items
+        li.card
+          .icon: i(class=`fa-solid fa-${item.icon} ${item.iconColor}`)
+          .card-wrap
+            h3.card__title= item.title
+            p.card__desc= item.desc
+            +link(item.label, item.desc)
+
+    section#opt-banner.support-opt__banner
+      h2.title 緊急サポートが必要ですか？
+      p.desc エンタープライズプランのお客様は、24時間365日の緊急サポートをご利用いただけます。
+      +button('緊急サポートに連絡', '', 'white-solid')

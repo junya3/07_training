@@ -1,1 +1,7 @@
 @use 'style/_global' as *;
+
+.contact-forms {
+  .col {
+    gap: 60px;
+  }
+}
