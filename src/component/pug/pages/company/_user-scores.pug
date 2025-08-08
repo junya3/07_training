@@ -1,3 +1,5 @@
+include /component/pug/ui/_scores
+
 mixin user-scores
   -
     const items = [
@@ -19,10 +21,4 @@ mixin user-scores
       },
     ]
 
-  section#user-scores.user-scores
-    .container
-      ul.user-scores__list.col.col-4
-        each item in items
-          li.user-scores__list-item
-            p.user-scores__list-val= item.value
-            p.user-scores__list-label= item.label
+  +scores(items)

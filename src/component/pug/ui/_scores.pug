@@ -1,0 +1,8 @@
+mixin scores(items)
+  section#scores.scores
+    .container
+      ul.scores__list.col.col-4
+        each item in items
+          li.scores__list-item
+            p.scores__list-val= item.value
+            p.scores__list-label= item.label
