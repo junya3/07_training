@@ -1,0 +1,10 @@
+extends /component/pug/layout/_layout
+include /component/pug/ui/_page-title
+include /component/pug/ui/_button
+
+block prepend title
+  - const pageTitle = 'コミュニティ';
+
+block content
+  +page-title('FlowSync', 'コミュニティ', '', '世界中のFlowSyncユーザーと繋がり、知識を共有し、 一緒に成長していきましょう。')
+    +button('コミュニティに参加', '/community', 'solid').community__button
