@@ -1,0 +1,48 @@
+include /component/pug/ui/_sec-title
+
+mixin discussion
+  -
+    const items = [
+      {
+        icon: 'message',
+        iconColor: 'blue',
+        title: '一般的な質問',
+        desc: 'FlowSyncの基本的な使い方について',
+        num: 1250
+      },
+      {
+        icon: 'users',
+        iconColor: 'green',
+        title: 'チーム管理',
+        desc: '効果的なチーム運営のコツ',
+        num: 890
+      },
+      {
+        icon: 'lightbulb',
+        iconColor: 'orange',
+        title: '機能リクエスト',
+        desc: '新機能のアイデアや要望',
+        num: 456
+      },
+      {
+        icon: 'star',
+        iconColor: 'purple',
+        title: '成功事例',
+        desc: 'FlowSync活用の成功体験',
+        num: 234
+      }
+    ];
+
+
+
+  section.discussion
+    .container
+      +sec-title('ディスカッションカテゴリ', '興味のあるトピックを見つけて参加しましょう')
+      ul.list.col.col-2
+        each item in items
+          li.list__item: a.list__item-wrap(href='/')
+            .icon(class=item.iconColor): i(class=`fa-solid fa-${item.icon} ${item.iconColor}`)
+            .item__wrap
+              h3.item__title= item.title
+              p.item__desc= item.desc
+              p.item__num #{ item.num }件の投稿

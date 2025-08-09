@@ -1,0 +1,59 @@
+@use 'style/_global' as *;
+
+.discussion {
+  .list {
+    &__item {
+      &-wrap {
+        display: block;
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        gap: 16px;
+        padding: 32px;
+        background: var(--color-white);
+
+        border-radius: 8px;
+
+        transition:
+          scale $hover-sec,
+          box-shadow,
+          $hover-sec;
+
+        @include hover() {
+          scale: 1.01;
+          box-shadow: var(--box-shadow);
+        }
+      }
+
+      .icon {
+        $colors: 'blue', 'green', 'orange', 'purple';
+
+        width: 50px;
+        height: 50px;
+        border-radius: 4px;
+        text-align: center;
+        align-content: center;
+
+        // colors forEach
+        @each $color in $colors {
+          &.#{$color} {
+            background: color-mix(in srgb, var(--color-#{$color}) 20%, #fff);
+          }
+        }
+      }
+
+      .item {
+        &__title {
+          @include font($font, 20, 600, 1.5);
+        }
+        &__desc {
+          @include font($font, 16, 400, 1.5);
+          color: var(--color-black-40);
+        }
+        &__num {
+          @include font($font, 14, 400, 1.5);
+          color: var(--color-black-40);
+        }
+      }
+    }
+  }
+}

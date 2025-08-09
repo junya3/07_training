@@ -2,6 +2,7 @@ extends /component/pug/layout/_layout
 include /component/pug/ui/_page-title
 include /component/pug/ui/_button
 include /component/pug/ui/_scores
+include /component/pug/pages/community/_discussion
 
 block prepend title
   - const pageTitle = 'コミュニティ';
@@ -32,3 +33,4 @@ block content
     +button('コミュニティに参加', '/community', 'solid').community__button
 
   +scores(items)
+  +discussion
